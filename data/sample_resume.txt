@@ -1,0 +1,41 @@
+ALICE CHEN
+Software Engineering Graduate | alice@example.com | San Francisco, CA
+
+EDUCATION
+Bachelor of Science in Computer Science — University of California, Berkeley (2025)
+- GPA: 3.7/4.0
+- Relevant Coursework: Data Structures, Algorithms, Operating Systems, Computer Networks, Database Systems
+
+TECHNICAL SKILLS
+- Languages: Python, Java, JavaScript, SQL, Bash
+- Cloud & DevOps: AWS (EC2, S3, Lambda), Docker, Git, GitHub Actions
+- Databases: PostgreSQL, MySQL, SQLite
+- Tools: Linux, VS Code, Jupyter Notebook, Postman
+- Frameworks: Flask, React (basic)
+
+PROJECTS
+Cloud-Based Task Manager (Jan 2025)
+- Built a REST API with Flask and deployed on AWS EC2 with Docker containers
+- Implemented user authentication with JWT tokens and PostgreSQL database
+- Set up CI/CD pipeline with GitHub Actions for automated testing and deployment
+
+Network Packet Analyzer (Oct 2024)
+- Developed a Python tool to capture and analyze network traffic using Scapy
+- Visualized packet data with Matplotlib, identifying potential security anomalies
+- Processed 10,000+ packets per session with efficient memory management
+
+EXPERIENCE
+Software Engineering Intern — TechStartup Inc. (Summer 2024)
+- Developed microservices in Python handling 1,000+ API requests daily
+- Wrote unit tests achieving 90% code coverage using pytest
+- Collaborated with a team of 5 engineers using Agile/Scrum methodology
+
+Teaching Assistant — UC Berkeley CS61B (Fall 2024)
+- Assisted 200+ students with data structures and algorithms concepts
+- Held weekly office hours and graded programming assignments
+
+CERTIFICATIONS
+- AWS Cloud Practitioner (2024)
+
+INTERESTS
+Cybersecurity, cloud infrastructure, open-source contributing

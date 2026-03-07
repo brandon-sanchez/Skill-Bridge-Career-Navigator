@@ -1,0 +1,352 @@
+{
+  "_meta": {
+    "description": "A fallback of occupational skills",
+    "source": "The US Department of Labor's O*NET data was partly used to inspire the data in this json file",
+    "note": "It's used as a fallback to the AI and convers a variety of different careers"
+  },
+  "roles": {
+    "Cloud Security Engineer": {
+      "category": "Cybersecurity",
+      "required_skills": ["AWS", "Azure", "Network Security", "IAM", "Python", "Terraform", "Docker", "SIEM", "Firewalls", "Incident Response", "Compliance", "Risk Assessment"],
+      "preferred_skills": ["Kubernetes", "GCP", "Splunk", "Penetration Testing", "CI/CD"],
+      "certifications": ["AWS Security Specialty", "CompTIA Security+", "CISSP"],
+      "experience_range": "1-5 years"
+    },
+    "SOC Analyst": {
+      "category": "Cybersecurity",
+      "required_skills": ["SIEM", "Incident Response", "Log Analysis", "Network Security", "Threat Intelligence", "Python", "Splunk", "Wireshark", "Malware Analysis", "Firewalls"],
+      "preferred_skills": ["PowerShell", "SOAR", "Forensics", "Elastic Stack", "Regex"],
+      "certifications": ["CompTIA Security+", "CompTIA CySA+", "GIAC GSEC"],
+      "experience_range": "0-3 years"
+    },
+    "DevSecOps Engineer": {
+      "category": "Cybersecurity",
+      "required_skills": ["CI/CD", "Docker", "Kubernetes", "Python", "Terraform", "SAST", "DAST", "Git", "Linux", "AWS", "Security Scanning", "Infrastructure as Code"],
+      "preferred_skills": ["Helm", "ArgoCD", "Vault", "Ansible", "Go"],
+      "certifications": ["AWS DevOps Professional", "CKS", "CompTIA Security+"],
+      "experience_range": "2-5 years"
+    },
+    "Cybersecurity Analyst": {
+      "category": "Cybersecurity",
+      "required_skills": ["Risk Assessment", "Vulnerability Management", "Network Security", "SIEM", "Incident Response", "Compliance", "Python", "Firewalls", "IDS/IPS", "Security Frameworks"],
+      "preferred_skills": ["Penetration Testing", "Cloud Security", "NIST", "ISO 27001", "Threat Modeling"],
+      "certifications": ["CompTIA Security+", "CEH", "CISSP"],
+      "experience_range": "1-4 years"
+    },
+    "Network Security Engineer": {
+      "category": "Cybersecurity",
+      "required_skills": ["Firewalls", "VPN", "Network Security", "TCP/IP", "IDS/IPS", "Cisco", "Palo Alto Networks", "Linux", "Routing & Switching", "DNS"],
+      "preferred_skills": ["SD-WAN", "Zero Trust", "Load Balancing", "Wireshark", "Python"],
+      "certifications": ["CCNA", "CCNP Security", "PCNSE"],
+      "experience_range": "2-6 years"
+    },
+    "Penetration Tester": {
+      "category": "Cybersecurity",
+      "required_skills": ["Penetration Testing", "Burp Suite", "Metasploit", "Python", "Linux", "Web Application Security", "OWASP", "Network Security", "Scripting", "Vulnerability Assessment"],
+      "preferred_skills": ["Reverse Engineering", "Exploit Development", "Mobile Security", "Cloud Pentesting", "Red Team"],
+      "certifications": ["OSCP", "CEH", "GPEN"],
+      "experience_range": "1-5 years"
+    },
+    "Full Stack Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["JavaScript", "React", "Node.js", "HTML", "CSS", "SQL", "Git", "REST APIs", "TypeScript", "Databases"],
+      "preferred_skills": ["Next.js", "Docker", "AWS", "GraphQL", "CI/CD"],
+      "certifications": ["AWS Cloud Practitioner", "Meta Front-End Developer"],
+      "experience_range": "0-5 years"
+    },
+    "Backend Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["Python", "SQL", "REST APIs", "Git", "Databases", "Linux", "Docker", "Data Structures", "Algorithms", "System Design"],
+      "preferred_skills": ["Go", "Kubernetes", "Redis", "Message Queues", "Microservices"],
+      "certifications": ["AWS Solutions Architect", "Google Cloud Associate"],
+      "experience_range": "1-5 years"
+    },
+    "Frontend Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["JavaScript", "React", "HTML", "CSS", "TypeScript", "Git", "Responsive Design", "REST APIs", "Testing", "UI/UX"],
+      "preferred_skills": ["Next.js", "Vue.js", "Tailwind CSS", "Webpack", "Accessibility"],
+      "certifications": ["Meta Front-End Developer", "Google UX Design"],
+      "experience_range": "0-4 years"
+    },
+    "Data Engineer": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "SQL", "ETL", "Apache Spark", "AWS", "Data Warehousing", "Airflow", "Kafka", "Data Modeling", "Git"],
+      "preferred_skills": ["Snowflake", "dbt", "Terraform", "Docker", "Streaming"],
+      "certifications": ["AWS Data Analytics Specialty", "Google Data Engineer", "Databricks"],
+      "experience_range": "1-5 years"
+    },
+    "Data Scientist": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "Machine Learning", "Statistics", "SQL", "Pandas", "Scikit-learn", "Data Visualization", "Jupyter", "NumPy", "A/B Testing"],
+      "preferred_skills": ["Deep Learning", "NLP", "TensorFlow", "PyTorch", "Feature Engineering"],
+      "certifications": ["Google Data Analytics", "IBM Data Science", "AWS ML Specialty"],
+      "experience_range": "1-5 years"
+    },
+    "Data Analyst": {
+      "category": "Data & Analytics",
+      "required_skills": ["SQL", "Excel", "Python", "Data Visualization", "Tableau", "Statistics", "Data Cleaning", "Power BI", "Reporting", "Business Intelligence"],
+      "preferred_skills": ["R", "Looker", "Google Analytics", "A/B Testing", "Dashboarding"],
+      "certifications": ["Google Data Analytics", "Tableau Desktop Specialist", "Microsoft Power BI"],
+      "experience_range": "0-3 years"
+    },
+    "ML Engineer": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "Machine Learning", "TensorFlow", "PyTorch", "MLOps", "Docker", "SQL", "AWS", "Data Pipelines", "Model Deployment"],
+      "preferred_skills": ["Kubernetes", "Feature Stores", "Experiment Tracking", "LLMs", "Distributed Computing"],
+      "certifications": ["AWS ML Specialty", "Google ML Engineer", "TensorFlow Developer"],
+      "experience_range": "2-6 years"
+    },
+    "Site Reliability Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["Linux", "Python", "Kubernetes", "Docker", "AWS", "Monitoring", "CI/CD", "Terraform", "Incident Management", "Networking"],
+      "preferred_skills": ["Go", "Prometheus", "Grafana", "Chaos Engineering", "Service Mesh"],
+      "certifications": ["AWS DevOps Professional", "CKA", "Google Cloud DevOps"],
+      "experience_range": "2-6 years"
+    },
+    "Cloud Architect": {
+      "category": "Software Engineering",
+      "required_skills": ["AWS", "Azure", "GCP", "Terraform", "Networking", "Security", "Docker", "Kubernetes", "System Design", "Cost Optimization"],
+      "preferred_skills": ["Multi-cloud", "Serverless", "Service Mesh", "Enterprise Architecture", "Migration"],
+      "certifications": ["AWS Solutions Architect Professional", "Azure Solutions Architect", "Google Cloud Architect"],
+      "experience_range": "3-8 years"
+    },
+    "Mobile Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["React Native", "JavaScript", "TypeScript", "REST APIs", "Git", "Mobile UI Design", "iOS", "Android", "State Management", "Testing"],
+      "preferred_skills": ["Swift", "Kotlin", "Flutter", "Firebase", "App Store Deployment"],
+      "certifications": ["Meta React Native", "Google Associate Android Developer"],
+      "experience_range": "1-5 years"
+    },
+    "Product Manager": {
+      "category": "Product & Business",
+      "required_skills": ["Product Strategy", "User Research", "Agile/Scrum", "Data Analysis", "Roadmap Planning", "Stakeholder Management", "A/B Testing", "SQL", "Wireframing", "Market Research"],
+      "preferred_skills": ["Figma", "Jira", "Technical Writing", "Financial Modeling", "API Understanding"],
+      "certifications": ["Pragmatic Institute", "Scrum Product Owner", "Google Project Management"],
+      "experience_range": "2-7 years"
+    },
+    "UX Designer": {
+      "category": "Design",
+      "required_skills": ["Figma", "User Research", "Wireframing", "Prototyping", "Usability Testing", "Design Systems", "Information Architecture", "Interaction Design", "Accessibility", "Visual Design"],
+      "preferred_skills": ["HTML/CSS", "Design Thinking", "Motion Design", "Sketch", "Analytics"],
+      "certifications": ["Google UX Design", "Nielsen Norman UX", "Interaction Design Foundation"],
+      "experience_range": "0-5 years"
+    },
+    "UI Designer": {
+      "category": "Design",
+      "required_skills": ["Figma", "Visual Design", "Typography", "Color Theory", "Design Systems", "Responsive Design", "Prototyping", "Branding", "Adobe Creative Suite", "Accessibility"],
+      "preferred_skills": ["Motion Design", "Illustration", "HTML/CSS", "3D Design", "Animation"],
+      "certifications": ["Google UX Design", "Adobe Certified Professional"],
+      "experience_range": "0-4 years"
+    },
+    "Digital Marketing Manager": {
+      "category": "Marketing",
+      "required_skills": ["SEO", "Google Analytics", "Content Strategy", "Social Media Marketing", "PPC/SEM", "Email Marketing", "Marketing Automation", "Data Analysis", "Copywriting", "CRM"],
+      "preferred_skills": ["HubSpot", "A/B Testing", "Video Marketing", "Influencer Marketing", "Marketing Attribution"],
+      "certifications": ["Google Ads", "HubSpot Inbound Marketing", "Google Analytics", "Meta Blueprint"],
+      "experience_range": "2-6 years"
+    },
+    "Content Marketing Manager": {
+      "category": "Marketing",
+      "required_skills": ["Content Strategy", "SEO", "Copywriting", "Blog Management", "Social Media", "Analytics", "Content Calendar", "Editorial Planning", "Brand Voice", "Email Marketing"],
+      "preferred_skills": ["Video Production", "Podcast Production", "WordPress", "Graphic Design", "Marketing Automation"],
+      "certifications": ["HubSpot Content Marketing", "Google Analytics", "Semrush SEO"],
+      "experience_range": "2-5 years"
+    },
+    "SEO Specialist": {
+      "category": "Marketing",
+      "required_skills": ["SEO", "Google Analytics", "Keyword Research", "Technical SEO", "Link Building", "Content Optimization", "Google Search Console", "HTML", "Data Analysis", "Competitive Analysis"],
+      "preferred_skills": ["Ahrefs", "Semrush", "Python", "JavaScript", "Schema Markup"],
+      "certifications": ["Google Analytics", "Semrush SEO", "HubSpot SEO"],
+      "experience_range": "1-4 years"
+    },
+    "Financial Analyst": {
+      "category": "Finance",
+      "required_skills": ["Financial Modeling", "Excel", "Data Analysis", "SQL", "Financial Reporting", "Budgeting", "Forecasting", "Accounting", "PowerPoint", "ERP Systems"],
+      "preferred_skills": ["Python", "Tableau", "Power BI", "Bloomberg Terminal", "VBA"],
+      "certifications": ["CFA Level 1", "Financial Modeling & Valuation Analyst", "Bloomberg Market Concepts"],
+      "experience_range": "0-4 years"
+    },
+    "Business Analyst": {
+      "category": "Product & Business",
+      "required_skills": ["Requirements Gathering", "SQL", "Data Analysis", "Process Mapping", "Stakeholder Management", "Documentation", "Excel", "Agile/Scrum", "Business Intelligence", "Communication"],
+      "preferred_skills": ["Tableau", "Power BI", "Python", "Jira", "UML"],
+      "certifications": ["CBAP", "PMI-PBA", "Scrum Master"],
+      "experience_range": "1-5 years"
+    },
+    "Project Manager": {
+      "category": "Product & Business",
+      "required_skills": ["Project Planning", "Agile/Scrum", "Stakeholder Management", "Risk Management", "Budgeting", "Communication", "Jira", "Documentation", "Resource Management", "Scheduling"],
+      "preferred_skills": ["MS Project", "Confluence", "Kanban", "PMP Methodology", "Data Analysis"],
+      "certifications": ["PMP", "Scrum Master", "Google Project Management", "PRINCE2"],
+      "experience_range": "2-7 years"
+    },
+    "DevOps Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["CI/CD", "Docker", "Kubernetes", "Linux", "AWS", "Terraform", "Python", "Git", "Monitoring", "Scripting"],
+      "preferred_skills": ["Ansible", "Jenkins", "ArgoCD", "Prometheus", "Go"],
+      "certifications": ["AWS DevOps Professional", "CKA", "HashiCorp Terraform Associate"],
+      "experience_range": "2-6 years"
+    },
+    "QA Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["Test Planning", "Selenium", "Python", "API Testing", "Git", "Agile/Scrum", "Bug Tracking", "Test Automation", "SQL", "CI/CD"],
+      "preferred_skills": ["Cypress", "Playwright", "Performance Testing", "Mobile Testing", "Docker"],
+      "certifications": ["ISTQB Foundation", "AWS Cloud Practitioner"],
+      "experience_range": "0-4 years"
+    },
+    "Technical Writer": {
+      "category": "Product & Business",
+      "required_skills": ["Technical Writing", "Documentation", "Markdown", "API Documentation", "Information Architecture", "Git", "Editing", "Audience Analysis", "Style Guides", "Diagrams"],
+      "preferred_skills": ["Swagger/OpenAPI", "DITA", "Video Tutorials", "HTML/CSS", "Content Management"],
+      "certifications": ["Google Technical Writing", "Society for Technical Communication"],
+      "experience_range": "0-5 years"
+    },
+    "AI/ML Research Scientist": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "Deep Learning", "Machine Learning", "PyTorch", "TensorFlow", "Mathematics", "Statistics", "Research Methods", "NLP", "Computer Vision"],
+      "preferred_skills": ["Reinforcement Learning", "GANs", "Transformers", "Distributed Training", "Paper Writing"],
+      "certifications": ["Deep Learning Specialization", "Stanford ML Certificate"],
+      "experience_range": "2-8 years"
+    },
+    "Solutions Architect": {
+      "category": "Software Engineering",
+      "required_skills": ["AWS", "System Design", "Cloud Architecture", "Networking", "Security", "APIs", "Databases", "Docker", "Communication", "Technical Writing"],
+      "preferred_skills": ["Azure", "GCP", "Serverless", "Microservices", "Cost Optimization"],
+      "certifications": ["AWS Solutions Architect Associate", "AWS Solutions Architect Professional", "Azure Architect"],
+      "experience_range": "3-8 years"
+    },
+    "Salesforce Administrator": {
+      "category": "Product & Business",
+      "required_skills": ["Salesforce", "CRM", "Data Management", "Reporting", "Workflows", "User Management", "Lightning", "Process Automation", "Data Import", "Security"],
+      "preferred_skills": ["Apex", "Visualforce", "Integration", "AppExchange", "SOQL"],
+      "certifications": ["Salesforce Administrator", "Salesforce Advanced Administrator", "Salesforce Platform App Builder"],
+      "experience_range": "1-4 years"
+    },
+    "Scrum Master": {
+      "category": "Product & Business",
+      "required_skills": ["Scrum", "Agile", "Facilitation", "Sprint Planning", "Retrospectives", "Jira", "Stakeholder Management", "Conflict Resolution", "Kanban", "Continuous Improvement"],
+      "preferred_skills": ["SAFe", "Coaching", "Metrics", "Release Planning", "DevOps Understanding"],
+      "certifications": ["CSM", "PSM I", "SAFe Scrum Master", "ICAgile"],
+      "experience_range": "1-6 years"
+    },
+    "Database Administrator": {
+      "category": "Software Engineering",
+      "required_skills": ["SQL", "Database Administration", "PostgreSQL", "MySQL", "Performance Tuning", "Backup & Recovery", "Linux", "Security", "Monitoring", "Replication"],
+      "preferred_skills": ["MongoDB", "AWS RDS", "Automation", "Python", "Data Migration"],
+      "certifications": ["Oracle DBA", "AWS Database Specialty", "Microsoft Azure Database"],
+      "experience_range": "2-6 years"
+    },
+    "Systems Administrator": {
+      "category": "Software Engineering",
+      "required_skills": ["Linux", "Windows Server", "Networking", "Active Directory", "Scripting", "Monitoring", "Backup & Recovery", "Security", "Virtualization", "DNS"],
+      "preferred_skills": ["Ansible", "PowerShell", "AWS", "Docker", "ITIL"],
+      "certifications": ["CompTIA A+", "CompTIA Network+", "RHCSA", "Microsoft Azure Admin"],
+      "experience_range": "1-5 years"
+    },
+    "IT Support Specialist": {
+      "category": "IT & Infrastructure",
+      "required_skills": ["Troubleshooting", "Windows", "macOS", "Networking", "Help Desk", "Active Directory", "Hardware", "Software Installation", "Communication", "Ticketing Systems"],
+      "preferred_skills": ["Linux", "Scripting", "Remote Support", "ITIL", "Cloud Basics"],
+      "certifications": ["CompTIA A+", "CompTIA Network+", "Google IT Support", "ITIL Foundation"],
+      "experience_range": "0-3 years"
+    },
+    "Blockchain Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["Solidity", "Ethereum", "Smart Contracts", "JavaScript", "Web3.js", "Git", "Cryptography", "DeFi", "Testing", "Node.js"],
+      "preferred_skills": ["Rust", "Hardhat", "IPFS", "Layer 2", "NFTs"],
+      "certifications": ["Blockchain Council Developer", "ConsenSys Bootcamp"],
+      "experience_range": "1-5 years"
+    },
+    "Game Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["C#", "Unity", "Game Design", "3D Mathematics", "Physics", "Git", "Problem Solving", "OOP", "Debugging", "Performance Optimization"],
+      "preferred_skills": ["Unreal Engine", "C++", "Shader Programming", "Multiplayer", "Mobile"],
+      "certifications": ["Unity Certified Developer", "Unreal Engine Developer"],
+      "experience_range": "0-5 years"
+    },
+    "Healthcare IT Specialist": {
+      "category": "IT & Infrastructure",
+      "required_skills": ["EHR Systems", "HL7/FHIR", "HIPAA Compliance", "SQL", "Networking", "Troubleshooting", "Data Management", "Security", "Integration", "Documentation"],
+      "preferred_skills": ["Epic", "Cerner", "Python", "Analytics", "Cloud"],
+      "certifications": ["CompTIA Healthcare IT", "HIPAA Certification", "Epic Certification"],
+      "experience_range": "1-5 years"
+    },
+    "Supply Chain Analyst": {
+      "category": "Operations",
+      "required_skills": ["Data Analysis", "Excel", "SQL", "Supply Chain Management", "Forecasting", "Inventory Management", "ERP Systems", "Process Improvement", "Reporting", "Communication"],
+      "preferred_skills": ["Python", "Tableau", "SAP", "Lean/Six Sigma", "Power BI"],
+      "certifications": ["APICS CSCP", "Six Sigma Green Belt", "Google Data Analytics"],
+      "experience_range": "0-4 years"
+    },
+    "Human Resources Analyst": {
+      "category": "Operations",
+      "required_skills": ["HRIS", "Data Analysis", "Excel", "Reporting", "Compliance", "Recruiting", "Communication", "Payroll Systems", "Employee Relations", "Documentation"],
+      "preferred_skills": ["Workday", "SQL", "Power BI", "Python", "Tableau"],
+      "certifications": ["SHRM-CP", "PHR", "People Analytics Certificate"],
+      "experience_range": "0-4 years"
+    },
+    "Cloud Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["AWS", "Linux", "Docker", "Terraform", "Networking", "CI/CD", "Python", "Kubernetes", "Monitoring", "Security"],
+      "preferred_skills": ["Azure", "GCP", "Serverless", "Ansible", "Cost Management"],
+      "certifications": ["AWS Cloud Practitioner", "AWS Solutions Architect Associate", "Google Cloud Associate"],
+      "experience_range": "1-5 years"
+    },
+    "Embedded Systems Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["C", "C++", "Embedded Systems", "RTOS", "Microcontrollers", "Hardware Debugging", "Linux", "Communication Protocols", "Testing", "Assembly"],
+      "preferred_skills": ["Rust", "FPGA", "IoT", "Bluetooth/WiFi", "PCB Design"],
+      "certifications": ["ARM Certified Engineer", "Embedded Linux Certificate"],
+      "experience_range": "1-6 years"
+    },
+    "Technical Support Engineer": {
+      "category": "IT & Infrastructure",
+      "required_skills": ["Troubleshooting", "Linux", "Networking", "Customer Communication", "SQL", "Scripting", "APIs", "Documentation", "Log Analysis", "Ticketing Systems"],
+      "preferred_skills": ["Python", "AWS", "Docker", "Monitoring", "Automation"],
+      "certifications": ["CompTIA A+", "CompTIA Network+", "AWS Cloud Practitioner"],
+      "experience_range": "0-4 years"
+    },
+    "Information Security Manager": {
+      "category": "Cybersecurity",
+      "required_skills": ["Security Strategy", "Risk Management", "Compliance", "NIST", "ISO 27001", "Incident Response", "Team Management", "Budgeting", "Vendor Management", "Security Architecture"],
+      "preferred_skills": ["Cloud Security", "SIEM", "GRC Tools", "Penetration Testing", "Business Continuity"],
+      "certifications": ["CISSP", "CISM", "CRISC"],
+      "experience_range": "5-10 years"
+    },
+    "Machine Learning Operations Engineer": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "MLOps", "Docker", "Kubernetes", "CI/CD", "AWS", "Model Monitoring", "Data Pipelines", "Git", "Linux"],
+      "preferred_skills": ["MLflow", "Kubeflow", "Feature Stores", "Terraform", "Spark"],
+      "certifications": ["AWS ML Specialty", "Google ML Engineer", "Databricks ML Associate"],
+      "experience_range": "2-6 years"
+    },
+    "Graphic Designer": {
+      "category": "Design",
+      "required_skills": ["Adobe Photoshop", "Adobe Illustrator", "Typography", "Color Theory", "Branding", "Layout Design", "Print Design", "Digital Design", "Creativity", "Communication"],
+      "preferred_skills": ["Motion Graphics", "After Effects", "Figma", "Photography", "3D Design"],
+      "certifications": ["Adobe Certified Professional", "Google UX Design"],
+      "experience_range": "0-5 years"
+    },
+    "Social Media Manager": {
+      "category": "Marketing",
+      "required_skills": ["Social Media Strategy", "Content Creation", "Analytics", "Community Management", "Copywriting", "Scheduling Tools", "Trend Analysis", "Brand Voice", "Paid Social", "Photography"],
+      "preferred_skills": ["Video Editing", "Influencer Marketing", "Canva", "Adobe Creative Suite", "SEO"],
+      "certifications": ["Meta Blueprint", "HubSpot Social Media", "Hootsuite Social Marketing"],
+      "experience_range": "0-4 years"
+    },
+    "Account Executive": {
+      "category": "Sales",
+      "required_skills": ["Sales", "CRM", "Prospecting", "Negotiation", "Communication", "Pipeline Management", "Presentation", "Relationship Building", "Cold Outreach", "Closing"],
+      "preferred_skills": ["Salesforce", "HubSpot", "SaaS Sales", "Account Management", "Sales Analytics"],
+      "certifications": ["Salesforce Sales Cloud", "HubSpot Sales", "SPIN Selling"],
+      "experience_range": "0-5 years"
+    },
+    "Customer Success Manager": {
+      "category": "Sales",
+      "required_skills": ["Customer Relationship Management", "Communication", "Data Analysis", "Onboarding", "Retention Strategies", "CRM", "Presentation", "Problem Solving", "Cross-functional Collaboration", "Reporting"],
+      "preferred_skills": ["Salesforce", "Gainsight", "SQL", "Product Knowledge", "Upselling"],
+      "certifications": ["Gainsight CSM", "Salesforce Administrator"],
+      "experience_range": "1-5 years"
+    }
+  }
+}
