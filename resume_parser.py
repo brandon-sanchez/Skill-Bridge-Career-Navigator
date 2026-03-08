@@ -12,6 +12,7 @@ import re
 
 from pypdf import PdfReader
 from docx import Document
+from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 
@@ -100,7 +101,6 @@ def _extract_skills_with_ai(resume_text, openai_key):
     """
     Use OpenAI extract skills from resume text.
     """
-    from openai import OpenAI
 
     client = OpenAI(api_key=openai_key)
 

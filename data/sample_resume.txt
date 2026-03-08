@@ -1,41 +1,50 @@
-ALICE CHEN
-Software Engineering Graduate | alice@example.com | San Francisco, CA
+Jake Ryan
+123-456-7890 | jake@su.edu | linkedin.com/in/jake | github.com/jake
 
 EDUCATION
-Bachelor of Science in Computer Science — University of California, Berkeley (2025)
-- GPA: 3.7/4.0
-- Relevant Coursework: Data Structures, Algorithms, Operating Systems, Computer Networks, Database Systems
+Southwestern University                                          Georgetown, TX
+Bachelor of Arts in Computer Science, Minor in Business     Aug. 2018 - May 2021
 
-TECHNICAL SKILLS
-- Languages: Python, Java, JavaScript, SQL, Bash
-- Cloud & DevOps: AWS (EC2, S3, Lambda), Docker, Git, GitHub Actions
-- Databases: PostgreSQL, MySQL, SQLite
-- Tools: Linux, VS Code, Jupyter Notebook, Postman
-- Frameworks: Flask, React (basic)
-
-PROJECTS
-Cloud-Based Task Manager (Jan 2025)
-- Built a REST API with Flask and deployed on AWS EC2 with Docker containers
-- Implemented user authentication with JWT tokens and PostgreSQL database
-- Set up CI/CD pipeline with GitHub Actions for automated testing and deployment
-
-Network Packet Analyzer (Oct 2024)
-- Developed a Python tool to capture and analyze network traffic using Scapy
-- Visualized packet data with Matplotlib, identifying potential security anomalies
-- Processed 10,000+ packets per session with efficient memory management
+Blinn College                                                       Bryan, TX
+Associate's in Liberal Arts                                 Aug. 2014 - May 2018
 
 EXPERIENCE
-Software Engineering Intern — TechStartup Inc. (Summer 2024)
-- Developed microservices in Python handling 1,000+ API requests daily
-- Wrote unit tests achieving 90% code coverage using pytest
-- Collaborated with a team of 5 engineers using Agile/Scrum methodology
+Undergraduate Research Assistant                           June 2020 - Present
+Texas A&M University                                       College Station, TX
+- Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems
+- Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data
+- Explored ways to visualize GitHub collaboration in a classroom setting
 
-Teaching Assistant — UC Berkeley CS61B (Fall 2024)
-- Assisted 200+ students with data structures and algorithms concepts
-- Held weekly office hours and graded programming assignments
+Information Technology Support Specialist                   Sep. 2018 - Present
+Southwestern University                                        Georgetown, TX
+- Communicate with managers to set up campus computers used on campus
+- Assess and troubleshoot computer problems brought by students, faculty and staff
+- Maintain upkeep of computers, classroom equipment, and 200 printers across campus
 
-CERTIFICATIONS
-- AWS Cloud Practitioner (2024)
+Artificial Intelligence Research Assistant                 May 2019 - July 2019
+Southwestern University                                        Georgetown, TX
+- Explored methods to generate video game dungeons based off of The Legend of Zelda
+- Developed a game in Java to test the generated dungeons
+- Contributed 50K+ lines of code to an established codebase via Git
+- Conducted a human subject study to determine which video game dungeon generation technique is enjoyable
+- Wrote an 8-page paper and gave multiple presentations on-campus
+- Presented virtually to the World Conference on Computational Intelligence
 
-INTERESTS
-Cybersecurity, cloud infrastructure, open-source contributing
+PROJECTS
+Gitlytics | Python, Flask, React, PostgreSQL, Docker      June 2020 - Present
+- Developed a full-stack web application using with Flask serving a REST API with React as the frontend
+- Implemented GitHub OAuth to get data from user's repositories
+- Visualized GitHub data to show collaboration
+- Used Celery and Redis for asynchronous tasks
+
+Simple Paintball | Spigot API, Java, Maven, TravisCI, Git  May 2018 - May 2020
+- Developed a Minecraft server plugin to entertain kids during free time for a previous job
+- Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review
+- Implemented continuous delivery using TravisCI to build the plugin upon new a release
+- Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin
+
+TECHNICAL SKILLS
+Languages: Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R
+Frameworks: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI
+Developer Tools: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse
+Libraries: pandas, NumPy, Matplotlib

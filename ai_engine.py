@@ -9,10 +9,11 @@ import logging
 import os
 
 from job_search import fetch_and_aggregate_skills
+from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 
-# Persona descriptions reused across AI prompts for consistent framing
+# persona descriptions
 PERSONA_CONTEXT = {
     'recent_grad': 'a recent graduate looking to break into the field',
     'career_switcher': 'someone switching careers — emphasize transferable skills',
@@ -33,7 +34,7 @@ def analyze_gaps(user_skills, target_role, persona, openai_key='', rapidapi_key=
     data_source = market_data.get('source', 'unknown')
     postings_analyzed = market_data.get('postings_count', 0)
 
-    # try ai analysis first, fall back to set math
+    # try ai analysis first if not then use fallback
     if openai_key:
         try:
             return _analyze_gaps_with_ai(
@@ -41,7 +42,7 @@ def analyze_gaps(user_skills, target_role, persona, openai_key='', rapidapi_key=
                 data_source, postings_analyzed, openai_key
             )
         except Exception:
-            logger.warning("AI gap analysis failed, falling back to set math", exc_info=True)
+            logger.warning("AI gap analysis failed, using fallback to analyize the gaps", exc_info=True)
 
     return _analyze_gaps_fallback(
         user_skills, target_role, persona, market_skills,
@@ -65,7 +66,6 @@ def generate_roadmap(missing_skills, target_role, persona, openai_key=''):
 def _analyze_gaps_with_ai(user_skills, target_role, persona, market_skills,
                           data_source, postings_analyzed, openai_key):
     """Use OpenAI to produce a nuanced gap analysis with persona-specific framing."""
-    from openai import OpenAI
 
     client = OpenAI(api_key=openai_key)
 
@@ -79,28 +79,28 @@ def _analyze_gaps_with_ai(user_skills, target_role, persona, market_skills,
 
     prompt = f"""You are a career advisor analyzing a skills gap. Be specific and actionable.
 
-User's current skills: {', '.join(user_skills)}
-Target role: {target_role}
-User context: {PERSONA_CONTEXT.get(persona, 'a job seeker')}
-
-Market demand (from {postings_analyzed} job postings via {data_source}):
-{market_summary}
-
-Return ONLY valid JSON with this structure:
-{{
-  "matched_skills": [{{"skill": "Python", "strength": "strong", "note": "78%"}}],
-  "missing_skills": [{{"skill": "Terraform", "priority": "high", "note": "78%"}}],
-{transferable_line}
-  "strength_score": 45,
-  "summary": "2-3 sentence personalized assessment",
-  "data_source": "{data_source}",
-  "postings_analyzed": {postings_analyzed},
-  "method": "ai"
-}}
-
-Prioritize missing_skills by how frequently they appear in job postings.
-The "note" field must be ONLY the percentage number followed by % (e.g. "78%"). No descriptions or extra text.
-Be encouraging but honest in the summary."""
+    User's current skills: {', '.join(user_skills)}
+    Target role: {target_role}
+    User context: {PERSONA_CONTEXT.get(persona, 'a job seeker')}
+    
+    Market demand (from {postings_analyzed} job postings via {data_source}):
+    {market_summary}
+    
+    Return ONLY valid JSON with this structure:
+    {{
+      "matched_skills": [{{"skill": "Python", "strength": "strong", "note": "78%"}}],
+      "missing_skills": [{{"skill": "Terraform", "priority": "high", "note": "78%"}}],
+    {transferable_line}
+      "strength_score": 45,
+      "summary": "2-3 sentence personalized assessment",
+      "data_source": "{data_source}",
+      "postings_analyzed": {postings_analyzed},
+      "method": "ai"
+    }}
+    
+    Prioritize missing_skills by how frequently they appear in job postings.
+    The "note" field must be ONLY the percentage number followed by % (e.g. "78%"). No descriptions or extra text.
+    Be encouraging but honest in the summary."""
 
     response = client.responses.create(
         model="gpt-5-mini",
@@ -121,7 +121,6 @@ Be encouraging but honest in the summary."""
 
 def _generate_roadmap_with_ai(missing_skills, target_role, persona, openai_key):
     """Ask OpenAI to build a phased learning plan with real course recommendations."""
-    from openai import OpenAI
 
     client = OpenAI(api_key=openai_key)
 
