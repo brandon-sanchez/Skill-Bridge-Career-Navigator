@@ -26,7 +26,7 @@ As for the fallback pattern, every external dependency (OpenAI, JSearch API) has
 
 - **Flask** — I chose Flask because its lightweight and I've had some experience working with it already to make other prototypes and MVPs so I thought it would be a great choice for that purpose.
 - **SQLite** — Similarly I chose SQLite for the same purpose as Flask, its simple and lightweight and works well for a demonstration MVP.
-- **Text-first extraction** — I wanted to try and minimize the amount of tokens I was using when working with ChatGPT so instead of passing in the file, I thought it would be better to first extract the text from the file or the text input and then pass that text into the GPT model.
+- **Text-first extraction** — I wanted to try and minimize the amount of tokens I was using when working with the gpt model so instead of passing in the file, I thought it would be better to first extract the text from the file or the text input and then pass that text into the GPT model.
 - **Fallback pattern** — Since I am utilizing both the GPT model and the JSearch API I believed it was best to have fallbacks in case both or either don't work. While they might have more general results as my synthetic data might not cover every skill or every job title, I thought it was best to have that to at least produce some result even if it was a little more general.
 - **Async skill extraction** — The onboarding form saves the profile immediately and shows a loading page while skills are extracted in the background. This keeps the user experience responsive even when the AI call is slow.
 
