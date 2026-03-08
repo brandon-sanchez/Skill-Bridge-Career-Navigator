@@ -65,6 +65,18 @@
                         {% endfor %}
                     </div>
 
+                    {# media type filter #}
+                    <div class="mb-3 d-flex align-items-center gap-2">
+                        <label class="small" style="color: var(--sb-text-muted); font-weight: 600;" for="filter-{{ phase_idx }}">Filter:</label>
+                        <select class="form-select form-select-sm phase-filter" id="filter-{{ phase_idx }}" data-phase="{{ phase_idx }}" style="width: auto;">
+                            <option value="all">All Types</option>
+                            <option value="video">Video</option>
+                            <option value="article">Article</option>
+                            <option value="course">Course</option>
+                            <option value="project">Project</option>
+                        </select>
+                    </div>
+
                     <div class="row g-4">
                         {# free resources #}
                         <div class="col-md-6">
@@ -73,7 +85,7 @@
                             </h6>
                             {% if phase.get('free_resources') %}
                                 {% for resource in phase.free_resources %}
-                                    <div class="resource-item d-flex align-items-start gap-2 py-2 border-bottom">
+                                    <div class="resource-item d-flex align-items-start gap-2 py-2 border-bottom" data-phase="{{ phase_idx }}" data-rtype="{{ resource.get('type', '') }}">
                                         <input type="checkbox" class="roadmap-check form-check-input mt-1"
                                                data-key="rm-{{ profile.id }}-{{ phase_idx }}-free-{{ loop.index0 }}">
                                         <div class="flex-grow-1">
@@ -109,7 +121,7 @@
                             </h6>
                             {% if phase.get('paid_resources') %}
                                 {% for resource in phase.paid_resources %}
-                                    <div class="resource-item d-flex align-items-start gap-2 py-2 border-bottom">
+                                    <div class="resource-item d-flex align-items-start gap-2 py-2 border-bottom" data-phase="{{ phase_idx }}" data-rtype="{{ resource.get('type', '') }}">
                                         <input type="checkbox" class="roadmap-check form-check-input mt-1"
                                                data-key="rm-{{ profile.id }}-{{ phase_idx }}-paid-{{ loop.index0 }}">
                                         <div class="flex-grow-1">
@@ -210,6 +222,21 @@
     });
 
     update();
+
+    // filtering the media types
+    document.querySelectorAll('.phase-filter').forEach(function(select) {
+        select.addEventListener('change', function() {
+            var phase = this.dataset.phase;
+            var type = this.value;
+            document.querySelectorAll('.resource-item[data-phase="' + phase + '"]').forEach(function(item) {
+                if (type === 'all' || item.dataset.rtype === type) {
+                    item.classList.remove('d-none');
+                } else {
+                    item.classList.add('d-none');
+                }
+            });
+        });
+    });
 })();
 </script>
 {% endblock %}

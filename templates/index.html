@@ -7,9 +7,9 @@
     <div class="col-lg-7">
         <div class="text-center mb-4">
             <h1 class="mb-2">Bridge the Gap to<br>Your Dream Career</h1>
-            <p style="color: var(--sb-text-secondary); max-width: 480px; margin: 0 auto;">
+            <p style="color: var(--sb-text-secondary); max-width: 500px; margin: 0 auto;">
                 Upload your resume, pick a target role, and get a personalized
-                gap analysis with a learning roadmap powered by real job market data.
+                analysis with a learning roadmap powered by real job market data.
             </p>
         </div>
 
@@ -42,14 +42,14 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
                         <input type="text" class="form-control" id="name" name="name"
-                               placeholder="e.g. Alice Chen">
+                               placeholder="e.g. Jake Ryan">
                         <div class="validation-error" id="nameError">Please enter your name.</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email"
-                               placeholder="alice@example.com">
+                               placeholder="jake@example.com">
                         <div class="validation-error" id="emailError">Please enter a valid email.</div>
                     </div>
 
@@ -58,7 +58,7 @@
                     <div class="row g-2 mb-3">
                         <div class="col-md-6">
                             <div class="persona-card p-3 h-100" data-persona="recent_grad">
-                                <strong>Recent Graduate</strong>
+                                <strong>Student / Recent Graduate</strong>
                                 <p class="small mb-0" style="color: var(--sb-text-secondary);">
                                     Breaking into the field and understanding what makes you competitive.
                                 </p>
@@ -154,12 +154,7 @@
                     <div class="mb-3">
                         <label for="targetRole" class="form-label">What role are you targeting?</label>
                         <input type="text" class="form-control form-control-lg" id="targetRole" name="target_role"
-                               list="roleList" placeholder="e.g. Cloud Security Engineer">
-                        <datalist id="roleList">
-                            {% for role in roles %}
-                                <option value="{{ role }}">
-                            {% endfor %}
-                        </datalist>
+                               placeholder="e.g. Software Engineer" autocomplete="off">
                         <div class="form-text" style="color: var(--sb-text-muted);">
                             Type any job title — we'll match it against real job postings.
                         </div>
@@ -178,8 +173,8 @@
         </form>
 
         <p class="text-center small" style="color: var(--sb-text-muted);">
-            Try it out with the sample resume in <code>data/sample_resume.txt</code>
-            targeting "Cloud Security Engineer."
+            Try with the sample resume in <code>data/sample_resume.txt</code> or <code> data/jakes-resume.pdf</code>
+            targeting "Software Engineer."
         </p>
     </div>
 </div>

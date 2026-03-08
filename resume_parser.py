@@ -109,9 +109,8 @@ def _extract_skills_with_ai(resume_text, openai_key):
         instructions=(
             "You are a resume skills extractor. Extract all technical skills, "
             "tools, frameworks, certifications, and technologies from the resume. "
-            "Also estimate years of professional experience. "
             "Return ONLY valid JSON with this exact structure: "
-            '{"skills": ["skill1", "skill2"], "experience_years": 2}'
+            '{"skills": ["skill1", "skill2"]}'
         ),
         input=f"Extract skills from this resume:\n\n{resume_text[:3000]}",
         max_output_tokens=2000,
@@ -146,35 +145,7 @@ def _extract_skills_with_keywords(resume_text):
         if re.search(pattern, resume_text, re.IGNORECASE):
             found_skills.add(skill)
 
-    # Try to guess years of experience from common resume patterns
-    experience_years = _estimate_experience(resume_text)
-
     return {
         'skills': sorted(found_skills, key=str.lower),
-        'experience_years': experience_years,
         'method': 'keyword_matching',
     }
-
-
-def _estimate_experience(resume_text):
-    """Try to guess years of experience from resume text.
-
-    if nothing is found then just return 0.
-    """
-    patterns = [
-        r'(\d+)\+?\s*years?\s+of\s+experience',
-        r'(\d+)\+?\s*years?\s+(?:in|of|working)',
-        r'experience[:\s]+(\d+)\+?\s*years?',
-    ]
-
-    max_years = 0
-    for pattern in patterns:
-        matches = re.findall(pattern, resume_text, re.IGNORECASE)
-        for match in matches:
-            years = int(match)
-            
-            # did this just as kind of a sanity check
-            if 0 < years < 50:
-                max_years = max(max_years, years)
-
-    return max_years

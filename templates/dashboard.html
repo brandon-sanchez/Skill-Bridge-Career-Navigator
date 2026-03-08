@@ -137,8 +137,8 @@
             </div>
         </div>
 
-        {# transferable skills #}
-        {% if gap.get('transferable_skills') %}
+        {# transferable skills which is only relevant for career switchers #}
+        {% if gap.get('transferable_skills') and profile.persona == 'career_switcher' %}
             <div class="sb-card mt-4">
                 <div class="card-body">
                     <h5>Transferable Skills</h5>
