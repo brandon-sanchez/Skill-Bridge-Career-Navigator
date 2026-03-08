@@ -1,8 +1,0 @@
-name,email,persona,extracted_skills,target_role,experience_years
-Alice Chen,alice@example.com,recent_grad,"Python, SQL, AWS, Docker, Linux, Git",Cloud Security Engineer,0
-Bob Martinez,bob@example.com,career_switcher,"JavaScript, React, Node.js, Git, HTML, CSS, SQL",Data Engineer,3
-Carol Johnson,carol@example.com,upskilling,"Python, Splunk, Linux, Wireshark, Network Security, Firewalls",SOC Analyst,5
-David Kim,david@example.com,recent_grad,"Python, Machine Learning, TensorFlow, Statistics, Pandas, NumPy",ML Engineer,0
-Priya Sharma,priya@example.com,career_switcher,"Excel, Data Analysis, SQL, Reporting, Communication, Stakeholder Management",Product Manager,4
-James Wilson,james@example.com,upskilling,"SEO, Google Analytics, Content Strategy, Social Media, Copywriting",Digital Marketing Manager,3
-Maria Santos,maria@example.com,mentor,"Python, AWS, Docker, Kubernetes, Terraform, CI/CD, Linux, Monitoring",Site Reliability Engineer,8

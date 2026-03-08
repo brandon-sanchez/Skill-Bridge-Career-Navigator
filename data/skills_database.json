@@ -1,0 +1,736 @@
+{
+  "_meta": {
+    "description": "Synthetic occupational skills database covering 100+ roles across tech, healthcare, finance, engineering, education, legal, trades, and more.",
+    "source": "Inspired by the U.S. Department of Labor's O*NET framework. All data is synthetic and curated for this project.",
+    "note": "Used as a fallback when AI or live job data is unavailable. Skills, certifications, and experience ranges reflect real-world requirements."
+  },
+  "roles": {
+    "Cloud Security Engineer": {
+      "category": "Cybersecurity",
+      "required_skills": ["AWS", "Azure", "Network Security", "IAM", "Python", "Terraform", "Docker", "SIEM", "Firewalls", "Incident Response", "Compliance", "Risk Assessment"],
+      "preferred_skills": ["Kubernetes", "GCP", "Splunk", "Penetration Testing", "CI/CD"],
+      "certifications": ["AWS Security Specialty", "CompTIA Security+", "CISSP"],
+      "experience_range": "1-5 years"
+    },
+    "SOC Analyst": {
+      "category": "Cybersecurity",
+      "required_skills": ["SIEM", "Incident Response", "Log Analysis", "Network Security", "Threat Intelligence", "Python", "Splunk", "Wireshark", "Malware Analysis", "Firewalls"],
+      "preferred_skills": ["PowerShell", "SOAR", "Forensics", "Elastic Stack", "Regex"],
+      "certifications": ["CompTIA Security+", "CompTIA CySA+", "GIAC GSEC"],
+      "experience_range": "0-3 years"
+    },
+    "DevSecOps Engineer": {
+      "category": "Cybersecurity",
+      "required_skills": ["CI/CD", "Docker", "Kubernetes", "Python", "Terraform", "SAST", "DAST", "Git", "Linux", "AWS", "Security Scanning", "Infrastructure as Code"],
+      "preferred_skills": ["Helm", "ArgoCD", "Vault", "Ansible", "Go"],
+      "certifications": ["AWS DevOps Professional", "CKS", "CompTIA Security+"],
+      "experience_range": "2-5 years"
+    },
+    "Cybersecurity Analyst": {
+      "category": "Cybersecurity",
+      "required_skills": ["Risk Assessment", "Vulnerability Management", "Network Security", "SIEM", "Incident Response", "Compliance", "Python", "Firewalls", "IDS/IPS", "Security Frameworks"],
+      "preferred_skills": ["Penetration Testing", "Cloud Security", "NIST", "ISO 27001", "Threat Modeling"],
+      "certifications": ["CompTIA Security+", "CEH", "CISSP"],
+      "experience_range": "1-4 years"
+    },
+    "Network Security Engineer": {
+      "category": "Cybersecurity",
+      "required_skills": ["Firewalls", "VPN", "Network Security", "TCP/IP", "IDS/IPS", "Cisco", "Palo Alto Networks", "Linux", "Routing & Switching", "DNS"],
+      "preferred_skills": ["SD-WAN", "Zero Trust", "Load Balancing", "Wireshark", "Python"],
+      "certifications": ["CCNA", "CCNP Security", "PCNSE"],
+      "experience_range": "2-6 years"
+    },
+    "Penetration Tester": {
+      "category": "Cybersecurity",
+      "required_skills": ["Penetration Testing", "Burp Suite", "Metasploit", "Python", "Linux", "Web Application Security", "OWASP", "Network Security", "Scripting", "Vulnerability Assessment"],
+      "preferred_skills": ["Reverse Engineering", "Exploit Development", "Mobile Security", "Cloud Pentesting", "Red Team"],
+      "certifications": ["OSCP", "CEH", "GPEN"],
+      "experience_range": "1-5 years"
+    },
+    "Full Stack Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["JavaScript", "React", "Node.js", "HTML", "CSS", "SQL", "Git", "REST APIs", "TypeScript", "Databases"],
+      "preferred_skills": ["Next.js", "Docker", "AWS", "GraphQL", "CI/CD"],
+      "certifications": ["AWS Cloud Practitioner", "Meta Front-End Developer"],
+      "experience_range": "0-5 years"
+    },
+    "Backend Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["Python", "SQL", "REST APIs", "Git", "Databases", "Linux", "Docker", "Data Structures", "Algorithms", "System Design"],
+      "preferred_skills": ["Go", "Kubernetes", "Redis", "Message Queues", "Microservices"],
+      "certifications": ["AWS Solutions Architect", "Google Cloud Associate"],
+      "experience_range": "1-5 years"
+    },
+    "Frontend Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["JavaScript", "React", "HTML", "CSS", "TypeScript", "Git", "Responsive Design", "REST APIs", "Testing", "UI/UX"],
+      "preferred_skills": ["Next.js", "Vue.js", "Tailwind CSS", "Webpack", "Accessibility"],
+      "certifications": ["Meta Front-End Developer", "Google UX Design"],
+      "experience_range": "0-4 years"
+    },
+    "Data Engineer": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "SQL", "ETL", "Apache Spark", "AWS", "Data Warehousing", "Airflow", "Kafka", "Data Modeling", "Git"],
+      "preferred_skills": ["Snowflake", "dbt", "Terraform", "Docker", "Streaming"],
+      "certifications": ["AWS Data Analytics Specialty", "Google Data Engineer", "Databricks"],
+      "experience_range": "1-5 years"
+    },
+    "Data Scientist": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "Machine Learning", "Statistics", "SQL", "Pandas", "Scikit-learn", "Data Visualization", "Jupyter", "NumPy", "A/B Testing"],
+      "preferred_skills": ["Deep Learning", "NLP", "TensorFlow", "PyTorch", "Feature Engineering"],
+      "certifications": ["Google Data Analytics", "IBM Data Science", "AWS ML Specialty"],
+      "experience_range": "1-5 years"
+    },
+    "Data Analyst": {
+      "category": "Data & Analytics",
+      "required_skills": ["SQL", "Excel", "Python", "Data Visualization", "Tableau", "Statistics", "Data Cleaning", "Power BI", "Reporting", "Business Intelligence"],
+      "preferred_skills": ["R", "Looker", "Google Analytics", "A/B Testing", "Dashboarding"],
+      "certifications": ["Google Data Analytics", "Tableau Desktop Specialist", "Microsoft Power BI"],
+      "experience_range": "0-3 years"
+    },
+    "ML Engineer": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "Machine Learning", "TensorFlow", "PyTorch", "MLOps", "Docker", "SQL", "AWS", "Data Pipelines", "Model Deployment"],
+      "preferred_skills": ["Kubernetes", "Feature Stores", "Experiment Tracking", "LLMs", "Distributed Computing"],
+      "certifications": ["AWS ML Specialty", "Google ML Engineer", "TensorFlow Developer"],
+      "experience_range": "2-6 years"
+    },
+    "Site Reliability Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["Linux", "Python", "Kubernetes", "Docker", "AWS", "Monitoring", "CI/CD", "Terraform", "Incident Management", "Networking"],
+      "preferred_skills": ["Go", "Prometheus", "Grafana", "Chaos Engineering", "Service Mesh"],
+      "certifications": ["AWS DevOps Professional", "CKA", "Google Cloud DevOps"],
+      "experience_range": "2-6 years"
+    },
+    "Cloud Architect": {
+      "category": "Software Engineering",
+      "required_skills": ["AWS", "Azure", "GCP", "Terraform", "Networking", "Security", "Docker", "Kubernetes", "System Design", "Cost Optimization"],
+      "preferred_skills": ["Multi-cloud", "Serverless", "Service Mesh", "Enterprise Architecture", "Migration"],
+      "certifications": ["AWS Solutions Architect Professional", "Azure Solutions Architect", "Google Cloud Architect"],
+      "experience_range": "3-8 years"
+    },
+    "Mobile Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["React Native", "JavaScript", "TypeScript", "REST APIs", "Git", "Mobile UI Design", "iOS", "Android", "State Management", "Testing"],
+      "preferred_skills": ["Swift", "Kotlin", "Flutter", "Firebase", "App Store Deployment"],
+      "certifications": ["Meta React Native", "Google Associate Android Developer"],
+      "experience_range": "1-5 years"
+    },
+    "Product Manager": {
+      "category": "Product & Business",
+      "required_skills": ["Product Strategy", "User Research", "Agile/Scrum", "Data Analysis", "Roadmap Planning", "Stakeholder Management", "A/B Testing", "SQL", "Wireframing", "Market Research"],
+      "preferred_skills": ["Figma", "Jira", "Technical Writing", "Financial Modeling", "API Understanding"],
+      "certifications": ["Pragmatic Institute", "Scrum Product Owner", "Google Project Management"],
+      "experience_range": "2-7 years"
+    },
+    "UX Designer": {
+      "category": "Design",
+      "required_skills": ["Figma", "User Research", "Wireframing", "Prototyping", "Usability Testing", "Design Systems", "Information Architecture", "Interaction Design", "Accessibility", "Visual Design"],
+      "preferred_skills": ["HTML/CSS", "Design Thinking", "Motion Design", "Sketch", "Analytics"],
+      "certifications": ["Google UX Design", "Nielsen Norman UX", "Interaction Design Foundation"],
+      "experience_range": "0-5 years"
+    },
+    "UI Designer": {
+      "category": "Design",
+      "required_skills": ["Figma", "Visual Design", "Typography", "Color Theory", "Design Systems", "Responsive Design", "Prototyping", "Branding", "Adobe Creative Suite", "Accessibility"],
+      "preferred_skills": ["Motion Design", "Illustration", "HTML/CSS", "3D Design", "Animation"],
+      "certifications": ["Google UX Design", "Adobe Certified Professional"],
+      "experience_range": "0-4 years"
+    },
+    "Digital Marketing Manager": {
+      "category": "Marketing",
+      "required_skills": ["SEO", "Google Analytics", "Content Strategy", "Social Media Marketing", "PPC/SEM", "Email Marketing", "Marketing Automation", "Data Analysis", "Copywriting", "CRM"],
+      "preferred_skills": ["HubSpot", "A/B Testing", "Video Marketing", "Influencer Marketing", "Marketing Attribution"],
+      "certifications": ["Google Ads", "HubSpot Inbound Marketing", "Google Analytics", "Meta Blueprint"],
+      "experience_range": "2-6 years"
+    },
+    "Content Marketing Manager": {
+      "category": "Marketing",
+      "required_skills": ["Content Strategy", "SEO", "Copywriting", "Blog Management", "Social Media", "Analytics", "Content Calendar", "Editorial Planning", "Brand Voice", "Email Marketing"],
+      "preferred_skills": ["Video Production", "Podcast Production", "WordPress", "Graphic Design", "Marketing Automation"],
+      "certifications": ["HubSpot Content Marketing", "Google Analytics", "Semrush SEO"],
+      "experience_range": "2-5 years"
+    },
+    "SEO Specialist": {
+      "category": "Marketing",
+      "required_skills": ["SEO", "Google Analytics", "Keyword Research", "Technical SEO", "Link Building", "Content Optimization", "Google Search Console", "HTML", "Data Analysis", "Competitive Analysis"],
+      "preferred_skills": ["Ahrefs", "Semrush", "Python", "JavaScript", "Schema Markup"],
+      "certifications": ["Google Analytics", "Semrush SEO", "HubSpot SEO"],
+      "experience_range": "1-4 years"
+    },
+    "Financial Analyst": {
+      "category": "Finance",
+      "required_skills": ["Financial Modeling", "Excel", "Data Analysis", "SQL", "Financial Reporting", "Budgeting", "Forecasting", "Accounting", "PowerPoint", "ERP Systems"],
+      "preferred_skills": ["Python", "Tableau", "Power BI", "Bloomberg Terminal", "VBA"],
+      "certifications": ["CFA Level 1", "Financial Modeling & Valuation Analyst", "Bloomberg Market Concepts"],
+      "experience_range": "0-4 years"
+    },
+    "Business Analyst": {
+      "category": "Product & Business",
+      "required_skills": ["Requirements Gathering", "SQL", "Data Analysis", "Process Mapping", "Stakeholder Management", "Documentation", "Excel", "Agile/Scrum", "Business Intelligence", "Communication"],
+      "preferred_skills": ["Tableau", "Power BI", "Python", "Jira", "UML"],
+      "certifications": ["CBAP", "PMI-PBA", "Scrum Master"],
+      "experience_range": "1-5 years"
+    },
+    "Project Manager": {
+      "category": "Product & Business",
+      "required_skills": ["Project Planning", "Agile/Scrum", "Stakeholder Management", "Risk Management", "Budgeting", "Communication", "Jira", "Documentation", "Resource Management", "Scheduling"],
+      "preferred_skills": ["MS Project", "Confluence", "Kanban", "PMP Methodology", "Data Analysis"],
+      "certifications": ["PMP", "Scrum Master", "Google Project Management", "PRINCE2"],
+      "experience_range": "2-7 years"
+    },
+    "DevOps Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["CI/CD", "Docker", "Kubernetes", "Linux", "AWS", "Terraform", "Python", "Git", "Monitoring", "Scripting"],
+      "preferred_skills": ["Ansible", "Jenkins", "ArgoCD", "Prometheus", "Go"],
+      "certifications": ["AWS DevOps Professional", "CKA", "HashiCorp Terraform Associate"],
+      "experience_range": "2-6 years"
+    },
+    "QA Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["Test Planning", "Selenium", "Python", "API Testing", "Git", "Agile/Scrum", "Bug Tracking", "Test Automation", "SQL", "CI/CD"],
+      "preferred_skills": ["Cypress", "Playwright", "Performance Testing", "Mobile Testing", "Docker"],
+      "certifications": ["ISTQB Foundation", "AWS Cloud Practitioner"],
+      "experience_range": "0-4 years"
+    },
+    "Technical Writer": {
+      "category": "Product & Business",
+      "required_skills": ["Technical Writing", "Documentation", "Markdown", "API Documentation", "Information Architecture", "Git", "Editing", "Audience Analysis", "Style Guides", "Diagrams"],
+      "preferred_skills": ["Swagger/OpenAPI", "DITA", "Video Tutorials", "HTML/CSS", "Content Management"],
+      "certifications": ["Google Technical Writing", "Society for Technical Communication"],
+      "experience_range": "0-5 years"
+    },
+    "AI/ML Research Scientist": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "Deep Learning", "Machine Learning", "PyTorch", "TensorFlow", "Mathematics", "Statistics", "Research Methods", "NLP", "Computer Vision"],
+      "preferred_skills": ["Reinforcement Learning", "GANs", "Transformers", "Distributed Training", "Paper Writing"],
+      "certifications": ["Deep Learning Specialization", "Stanford ML Certificate"],
+      "experience_range": "2-8 years"
+    },
+    "Solutions Architect": {
+      "category": "Software Engineering",
+      "required_skills": ["AWS", "System Design", "Cloud Architecture", "Networking", "Security", "APIs", "Databases", "Docker", "Communication", "Technical Writing"],
+      "preferred_skills": ["Azure", "GCP", "Serverless", "Microservices", "Cost Optimization"],
+      "certifications": ["AWS Solutions Architect Associate", "AWS Solutions Architect Professional", "Azure Architect"],
+      "experience_range": "3-8 years"
+    },
+    "Salesforce Administrator": {
+      "category": "Product & Business",
+      "required_skills": ["Salesforce", "CRM", "Data Management", "Reporting", "Workflows", "User Management", "Lightning", "Process Automation", "Data Import", "Security"],
+      "preferred_skills": ["Apex", "Visualforce", "Integration", "AppExchange", "SOQL"],
+      "certifications": ["Salesforce Administrator", "Salesforce Advanced Administrator", "Salesforce Platform App Builder"],
+      "experience_range": "1-4 years"
+    },
+    "Scrum Master": {
+      "category": "Product & Business",
+      "required_skills": ["Scrum", "Agile", "Facilitation", "Sprint Planning", "Retrospectives", "Jira", "Stakeholder Management", "Conflict Resolution", "Kanban", "Continuous Improvement"],
+      "preferred_skills": ["SAFe", "Coaching", "Metrics", "Release Planning", "DevOps Understanding"],
+      "certifications": ["CSM", "PSM I", "SAFe Scrum Master", "ICAgile"],
+      "experience_range": "1-6 years"
+    },
+    "Database Administrator": {
+      "category": "Software Engineering",
+      "required_skills": ["SQL", "Database Administration", "PostgreSQL", "MySQL", "Performance Tuning", "Backup & Recovery", "Linux", "Security", "Monitoring", "Replication"],
+      "preferred_skills": ["MongoDB", "AWS RDS", "Automation", "Python", "Data Migration"],
+      "certifications": ["Oracle DBA", "AWS Database Specialty", "Microsoft Azure Database"],
+      "experience_range": "2-6 years"
+    },
+    "Systems Administrator": {
+      "category": "Software Engineering",
+      "required_skills": ["Linux", "Windows Server", "Networking", "Active Directory", "Scripting", "Monitoring", "Backup & Recovery", "Security", "Virtualization", "DNS"],
+      "preferred_skills": ["Ansible", "PowerShell", "AWS", "Docker", "ITIL"],
+      "certifications": ["CompTIA A+", "CompTIA Network+", "RHCSA", "Microsoft Azure Admin"],
+      "experience_range": "1-5 years"
+    },
+    "IT Support Specialist": {
+      "category": "IT & Infrastructure",
+      "required_skills": ["Troubleshooting", "Windows", "macOS", "Networking", "Help Desk", "Active Directory", "Hardware", "Software Installation", "Communication", "Ticketing Systems"],
+      "preferred_skills": ["Linux", "Scripting", "Remote Support", "ITIL", "Cloud Basics"],
+      "certifications": ["CompTIA A+", "CompTIA Network+", "Google IT Support", "ITIL Foundation"],
+      "experience_range": "0-3 years"
+    },
+    "Blockchain Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["Solidity", "Ethereum", "Smart Contracts", "JavaScript", "Web3.js", "Git", "Cryptography", "DeFi", "Testing", "Node.js"],
+      "preferred_skills": ["Rust", "Hardhat", "IPFS", "Layer 2", "NFTs"],
+      "certifications": ["Blockchain Council Developer", "ConsenSys Bootcamp"],
+      "experience_range": "1-5 years"
+    },
+    "Game Developer": {
+      "category": "Software Engineering",
+      "required_skills": ["C#", "Unity", "Game Design", "3D Mathematics", "Physics", "Git", "Problem Solving", "OOP", "Debugging", "Performance Optimization"],
+      "preferred_skills": ["Unreal Engine", "C++", "Shader Programming", "Multiplayer", "Mobile"],
+      "certifications": ["Unity Certified Developer", "Unreal Engine Developer"],
+      "experience_range": "0-5 years"
+    },
+    "Healthcare IT Specialist": {
+      "category": "IT & Infrastructure",
+      "required_skills": ["EHR Systems", "HL7/FHIR", "HIPAA Compliance", "SQL", "Networking", "Troubleshooting", "Data Management", "Security", "Integration", "Documentation"],
+      "preferred_skills": ["Epic", "Cerner", "Python", "Analytics", "Cloud"],
+      "certifications": ["CompTIA Healthcare IT", "HIPAA Certification", "Epic Certification"],
+      "experience_range": "1-5 years"
+    },
+    "Supply Chain Analyst": {
+      "category": "Operations",
+      "required_skills": ["Data Analysis", "Excel", "SQL", "Supply Chain Management", "Forecasting", "Inventory Management", "ERP Systems", "Process Improvement", "Reporting", "Communication"],
+      "preferred_skills": ["Python", "Tableau", "SAP", "Lean/Six Sigma", "Power BI"],
+      "certifications": ["APICS CSCP", "Six Sigma Green Belt", "Google Data Analytics"],
+      "experience_range": "0-4 years"
+    },
+    "Human Resources Analyst": {
+      "category": "Operations",
+      "required_skills": ["HRIS", "Data Analysis", "Excel", "Reporting", "Compliance", "Recruiting", "Communication", "Payroll Systems", "Employee Relations", "Documentation"],
+      "preferred_skills": ["Workday", "SQL", "Power BI", "Python", "Tableau"],
+      "certifications": ["SHRM-CP", "PHR", "People Analytics Certificate"],
+      "experience_range": "0-4 years"
+    },
+    "Cloud Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["AWS", "Linux", "Docker", "Terraform", "Networking", "CI/CD", "Python", "Kubernetes", "Monitoring", "Security"],
+      "preferred_skills": ["Azure", "GCP", "Serverless", "Ansible", "Cost Management"],
+      "certifications": ["AWS Cloud Practitioner", "AWS Solutions Architect Associate", "Google Cloud Associate"],
+      "experience_range": "1-5 years"
+    },
+    "Embedded Systems Engineer": {
+      "category": "Software Engineering",
+      "required_skills": ["C", "C++", "Embedded Systems", "RTOS", "Microcontrollers", "Hardware Debugging", "Linux", "Communication Protocols", "Testing", "Assembly"],
+      "preferred_skills": ["Rust", "FPGA", "IoT", "Bluetooth/WiFi", "PCB Design"],
+      "certifications": ["ARM Certified Engineer", "Embedded Linux Certificate"],
+      "experience_range": "1-6 years"
+    },
+    "Technical Support Engineer": {
+      "category": "IT & Infrastructure",
+      "required_skills": ["Troubleshooting", "Linux", "Networking", "Customer Communication", "SQL", "Scripting", "APIs", "Documentation", "Log Analysis", "Ticketing Systems"],
+      "preferred_skills": ["Python", "AWS", "Docker", "Monitoring", "Automation"],
+      "certifications": ["CompTIA A+", "CompTIA Network+", "AWS Cloud Practitioner"],
+      "experience_range": "0-4 years"
+    },
+    "Information Security Manager": {
+      "category": "Cybersecurity",
+      "required_skills": ["Security Strategy", "Risk Management", "Compliance", "NIST", "ISO 27001", "Incident Response", "Team Management", "Budgeting", "Vendor Management", "Security Architecture"],
+      "preferred_skills": ["Cloud Security", "SIEM", "GRC Tools", "Penetration Testing", "Business Continuity"],
+      "certifications": ["CISSP", "CISM", "CRISC"],
+      "experience_range": "5-10 years"
+    },
+    "Machine Learning Operations Engineer": {
+      "category": "Data & Analytics",
+      "required_skills": ["Python", "MLOps", "Docker", "Kubernetes", "CI/CD", "AWS", "Model Monitoring", "Data Pipelines", "Git", "Linux"],
+      "preferred_skills": ["MLflow", "Kubeflow", "Feature Stores", "Terraform", "Spark"],
+      "certifications": ["AWS ML Specialty", "Google ML Engineer", "Databricks ML Associate"],
+      "experience_range": "2-6 years"
+    },
+    "Graphic Designer": {
+      "category": "Design",
+      "required_skills": ["Adobe Photoshop", "Adobe Illustrator", "Typography", "Color Theory", "Branding", "Layout Design", "Print Design", "Digital Design", "Creativity", "Communication"],
+      "preferred_skills": ["Motion Graphics", "After Effects", "Figma", "Photography", "3D Design"],
+      "certifications": ["Adobe Certified Professional", "Google UX Design"],
+      "experience_range": "0-5 years"
+    },
+    "Social Media Manager": {
+      "category": "Marketing",
+      "required_skills": ["Social Media Strategy", "Content Creation", "Analytics", "Community Management", "Copywriting", "Scheduling Tools", "Trend Analysis", "Brand Voice", "Paid Social", "Photography"],
+      "preferred_skills": ["Video Editing", "Influencer Marketing", "Canva", "Adobe Creative Suite", "SEO"],
+      "certifications": ["Meta Blueprint", "HubSpot Social Media", "Hootsuite Social Marketing"],
+      "experience_range": "0-4 years"
+    },
+    "Account Executive": {
+      "category": "Sales",
+      "required_skills": ["Sales", "CRM", "Prospecting", "Negotiation", "Communication", "Pipeline Management", "Presentation", "Relationship Building", "Cold Outreach", "Closing"],
+      "preferred_skills": ["Salesforce", "HubSpot", "SaaS Sales", "Account Management", "Sales Analytics"],
+      "certifications": ["Salesforce Sales Cloud", "HubSpot Sales", "SPIN Selling"],
+      "experience_range": "0-5 years"
+    },
+    "Customer Success Manager": {
+      "category": "Sales",
+      "required_skills": ["Customer Relationship Management", "Communication", "Data Analysis", "Onboarding", "Retention Strategies", "CRM", "Presentation", "Problem Solving", "Cross-functional Collaboration", "Reporting"],
+      "preferred_skills": ["Salesforce", "Gainsight", "SQL", "Product Knowledge", "Upselling"],
+      "certifications": ["Gainsight CSM", "Salesforce Administrator"],
+      "experience_range": "1-5 years"
+    },
+
+    "Registered Nurse": {
+      "category": "Healthcare",
+      "required_skills": ["Patient Assessment", "IV Therapy", "Medication Administration", "Electronic Health Records", "BLS/ACLS", "Wound Care", "Patient Education", "Vital Signs Monitoring", "Care Planning", "Infection Control", "Clinical Documentation", "Triage"],
+      "preferred_skills": ["Telemetry Monitoring", "Phlebotomy", "Discharge Planning", "Case Management", "Epic EHR"],
+      "certifications": ["RN License (NCLEX-RN)", "BLS Certification", "ACLS Certification", "CCRN"],
+      "experience_range": "0-5 years"
+    },
+    "Medical Coder": {
+      "category": "Healthcare",
+      "required_skills": ["ICD-10 Coding", "CPT Coding", "Medical Terminology", "Anatomy & Physiology", "HCPCS Coding", "Clinical Documentation Review", "Revenue Cycle Management", "Compliance", "EHR Systems", "Attention to Detail"],
+      "preferred_skills": ["DRG Assignment", "Auditing", "Encoder Software", "Denial Management", "Outpatient Coding"],
+      "certifications": ["CPC (AAPC)", "CCS (AHIMA)", "RHIT", "CCA"],
+      "experience_range": "0-3 years"
+    },
+    "Healthcare Administrator": {
+      "category": "Healthcare",
+      "required_skills": ["Healthcare Operations", "Budgeting", "Regulatory Compliance", "Staff Management", "HIPAA", "Quality Improvement", "Strategic Planning", "Healthcare Policy", "Patient Satisfaction", "Data Analysis", "EHR Systems", "Revenue Cycle Management"],
+      "preferred_skills": ["Lean/Six Sigma", "Accreditation Standards", "Grant Management", "Change Management", "Population Health"],
+      "certifications": ["FACHE (Fellow of ACHE)", "CPCS", "Lean Six Sigma Green Belt", "CPHQ"],
+      "experience_range": "3-8 years"
+    },
+    "Physical Therapist": {
+      "category": "Healthcare",
+      "required_skills": ["Therapeutic Exercise Prescription", "Manual Therapy", "Patient Assessment", "Treatment Planning", "Gait Analysis", "Musculoskeletal Evaluation", "Rehabilitation Protocols", "Clinical Documentation", "Patient Education", "Functional Mobility Assessment", "Modalities Application", "Outcome Measurement"],
+      "preferred_skills": ["Dry Needling", "Sports Rehabilitation", "Neurological Rehabilitation", "Aquatic Therapy", "Vestibular Rehabilitation"],
+      "certifications": ["PT License (NPTE)", "BLS Certification", "OCS (Orthopedic Clinical Specialist)", "SCS (Sports Clinical Specialist)"],
+      "experience_range": "0-5 years"
+    },
+    "Clinical Research Coordinator": {
+      "category": "Healthcare",
+      "required_skills": ["Clinical Trial Management", "Good Clinical Practice (GCP)", "IRB Submissions", "Patient Recruitment", "Informed Consent Process", "Data Collection", "Adverse Event Reporting", "Protocol Compliance", "Regulatory Documentation", "Electronic Data Capture"],
+      "preferred_skills": ["CTMS Software", "Biostatistics Basics", "Grant Writing", "Phlebotomy", "Medical Terminology"],
+      "certifications": ["CCRC (ACRP)", "CCRP (SoCRA)", "GCP Certification", "HIPAA Certification"],
+      "experience_range": "0-4 years"
+    },
+    "Pharmacy Technician": {
+      "category": "Healthcare",
+      "required_skills": ["Prescription Processing", "Medication Dispensing", "Pharmaceutical Calculations", "Inventory Management", "Patient Interaction", "Pharmacy Software Systems", "Compounding", "Insurance Billing", "Drug Interactions Awareness", "HIPAA Compliance"],
+      "preferred_skills": ["Sterile Compounding", "Automated Dispensing Systems", "Prior Authorization", "Hazardous Drug Handling", "Long-term Care Pharmacy"],
+      "certifications": ["CPhT (PTCB)", "ExCPT", "Sterile Compounding Certification", "State Pharmacy Technician License"],
+      "experience_range": "0-3 years"
+    },
+    "Health Informatics Analyst": {
+      "category": "Healthcare",
+      "required_skills": ["Health Data Analysis", "EHR Systems", "SQL", "Clinical Workflows", "HL7/FHIR", "HIPAA Compliance", "Data Visualization", "Healthcare Quality Metrics", "Systems Implementation", "Requirements Gathering", "Clinical Decision Support"],
+      "preferred_skills": ["Python", "Tableau", "Epic Reporting", "Machine Learning in Healthcare", "Population Health Analytics"],
+      "certifications": ["CPHIMS (HIMSS)", "RHIA", "CAHIMS", "HL7 FHIR Certification"],
+      "experience_range": "1-5 years"
+    },
+
+    "Instructional Designer": {
+      "category": "Education",
+      "required_skills": ["Curriculum Design", "Learning Management Systems", "ADDIE Model", "Storyboarding", "Assessment Design", "Adult Learning Theory", "Multimedia Content Development", "Learning Objectives Writing", "Articulate Storyline", "Instructional Strategies", "Accessibility Standards"],
+      "preferred_skills": ["Video Production", "Gamification", "xAPI/SCORM", "Adobe Captivate", "Data Analytics for Learning"],
+      "certifications": ["CPLP (ATD)", "Certified Instructional Designer", "Quality Matters Certification"],
+      "experience_range": "1-5 years"
+    },
+    "Curriculum Developer": {
+      "category": "Education",
+      "required_skills": ["Curriculum Mapping", "Standards Alignment", "Lesson Planning", "Assessment Development", "Content Writing", "Pedagogical Knowledge", "Backward Design", "Differentiated Instruction", "Educational Research", "Scope and Sequence Planning", "Rubric Development"],
+      "preferred_skills": ["EdTech Integration", "Universal Design for Learning", "Data-Driven Instruction", "Grant Writing", "Professional Development Facilitation"],
+      "certifications": ["Teaching License/Certification", "Understanding by Design Certificate", "National Board Certification"],
+      "experience_range": "2-6 years"
+    },
+    "Education Technology Specialist": {
+      "category": "Education",
+      "required_skills": ["LMS Administration", "EdTech Tool Evaluation", "Faculty Training", "Technical Support", "Learning Analytics", "Digital Accessibility", "SCORM/xAPI", "System Integration", "Instructional Design Basics", "Troubleshooting", "User Documentation"],
+      "preferred_skills": ["API Integration", "HTML/CSS", "Video Conferencing Platforms", "Data Analysis", "Cybersecurity Basics"],
+      "certifications": ["Google Certified Educator", "Microsoft Certified Educator", "ISTE Certification", "CompTIA A+"],
+      "experience_range": "1-5 years"
+    },
+    "Academic Advisor": {
+      "category": "Education",
+      "required_skills": ["Student Advising", "Degree Planning", "Student Information Systems", "Academic Policy Knowledge", "Active Listening", "Crisis Intervention", "Record Keeping", "Transfer Credit Evaluation", "Career Guidance", "Multicultural Competency"],
+      "preferred_skills": ["Data Analysis", "Retention Strategies", "Program Assessment", "Event Planning", "Grant Writing"],
+      "certifications": ["NACADA Certificate", "Master's in Higher Education", "Mental Health First Aid"],
+      "experience_range": "0-4 years"
+    },
+    "School Counselor": {
+      "category": "Education",
+      "required_skills": ["Individual Counseling", "Group Counseling", "Crisis Intervention", "College & Career Readiness Planning", "Social-Emotional Learning", "Academic Planning", "Conflict Resolution", "Mandated Reporting", "IEP/504 Plan Knowledge", "Parent Communication", "Classroom Guidance Lessons"],
+      "preferred_skills": ["Trauma-Informed Practices", "Bilingual Communication", "Data-Driven Decision Making", "Suicide Risk Assessment", "Restorative Practices"],
+      "certifications": ["State School Counseling License", "NCC (National Certified Counselor)", "ASCA Specialist Credential", "Mental Health First Aid"],
+      "experience_range": "0-5 years"
+    },
+
+    "Paralegal": {
+      "category": "Legal",
+      "required_skills": ["Legal Research", "Legal Writing", "Case Management", "Document Drafting", "E-Discovery", "Filing Procedures", "Client Communication", "Litigation Support", "Contract Review", "Westlaw/LexisNexis"],
+      "preferred_skills": ["Trial Preparation", "Deposition Summaries", "Immigration Law", "Real Estate Closings", "Notary Public"],
+      "certifications": ["Certified Paralegal (NALA)", "Paralegal CORE Competency Exam (NFPA)", "ABA-Approved Paralegal Certificate"],
+      "experience_range": "0-4 years"
+    },
+    "Legal Analyst": {
+      "category": "Legal",
+      "required_skills": ["Legal Research", "Regulatory Analysis", "Contract Analysis", "Legal Writing", "Data Analysis", "Policy Review", "Compliance Monitoring", "Case Law Review", "Risk Assessment", "Report Drafting", "Westlaw/LexisNexis"],
+      "preferred_skills": ["SQL", "Legal Technology Platforms", "Legislative Tracking", "Intellectual Property Basics", "Project Management"],
+      "certifications": ["Certified Compliance & Ethics Professional (CCEP)", "Paralegal Certificate", "Legal Project Management Certificate"],
+      "experience_range": "1-5 years"
+    },
+    "Compliance Officer": {
+      "category": "Legal",
+      "required_skills": ["Regulatory Compliance", "Policy Development", "Risk Assessment", "Internal Auditing", "Compliance Training", "Investigation Management", "Reporting", "Stakeholder Communication", "Documentation", "Ethics Program Management", "Regulatory Monitoring"],
+      "preferred_skills": ["Anti-Money Laundering", "GDPR", "SOX Compliance", "GRC Platforms", "Data Privacy"],
+      "certifications": ["CCEP (Compliance & Ethics Professional)", "CRCM", "CFE (Certified Fraud Examiner)", "CAMS"],
+      "experience_range": "2-7 years"
+    },
+    "Contract Administrator": {
+      "category": "Legal",
+      "required_skills": ["Contract Drafting", "Contract Negotiation", "Contract Lifecycle Management", "Compliance Review", "Vendor Management", "Risk Analysis", "Documentation", "Stakeholder Communication", "Redlining", "Change Order Management", "CLM Software"],
+      "preferred_skills": ["Government Contracting (FAR)", "Procurement", "ERP Systems", "Legal Research", "Dispute Resolution"],
+      "certifications": ["CCCM (Certified Commercial Contracts Manager)", "CFCM (Certified Federal Contracts Manager)", "CPCM", "PMP"],
+      "experience_range": "1-5 years"
+    },
+
+    "Civil Engineer": {
+      "category": "Engineering",
+      "required_skills": ["AutoCAD", "Structural Analysis", "Hydraulics & Hydrology", "Project Management", "Geotechnical Engineering", "Construction Materials", "Surveying", "Code Compliance", "Cost Estimation", "Environmental Regulations", "Technical Report Writing"],
+      "preferred_skills": ["Revit", "GIS", "BIM", "Finite Element Analysis", "Stormwater Management"],
+      "certifications": ["PE License (Professional Engineer)", "FE (Fundamentals of Engineering)", "LEED AP", "PMP"],
+      "experience_range": "0-6 years"
+    },
+    "Mechanical Engineer": {
+      "category": "Engineering",
+      "required_skills": ["SolidWorks", "Thermodynamics", "Materials Science", "Finite Element Analysis", "Manufacturing Processes", "Technical Drawing", "GD&T", "Product Design", "MATLAB", "Project Management", "Root Cause Analysis"],
+      "preferred_skills": ["ANSYS", "CFD Analysis", "Additive Manufacturing", "Robotics", "Lean Manufacturing"],
+      "certifications": ["PE License (Professional Engineer)", "FE (Fundamentals of Engineering)", "Six Sigma Green Belt", "CSWA (Certified SolidWorks Associate)"],
+      "experience_range": "0-6 years"
+    },
+    "Electrical Engineer": {
+      "category": "Engineering",
+      "required_skills": ["Circuit Design", "PCB Layout", "Power Systems", "MATLAB/Simulink", "Control Systems", "Embedded Systems", "Signal Processing", "Electrical Code (NEC)", "Schematic Capture", "Testing & Debugging", "Technical Documentation"],
+      "preferred_skills": ["PLC Programming", "VHDL/Verilog", "Power Electronics", "RF Engineering", "AutoCAD Electrical"],
+      "certifications": ["PE License (Professional Engineer)", "FE (Fundamentals of Engineering)", "Certified Energy Manager", "IPC-A-610"],
+      "experience_range": "0-6 years"
+    },
+    "Environmental Engineer": {
+      "category": "Engineering",
+      "required_skills": ["Environmental Impact Assessment", "Water Treatment", "Air Quality Monitoring", "Regulatory Compliance (EPA)", "Remediation Design", "GIS", "Environmental Sampling", "Data Analysis", "Report Writing", "Waste Management", "Stormwater Management"],
+      "preferred_skills": ["AutoCAD", "Groundwater Modeling", "Sustainability Planning", "Phase I/II ESA", "NEPA Documentation"],
+      "certifications": ["PE License (Professional Engineer)", "FE (Fundamentals of Engineering)", "LEED AP", "Certified Hazardous Materials Manager (CHMM)"],
+      "experience_range": "0-6 years"
+    },
+    "Industrial Engineer": {
+      "category": "Engineering",
+      "required_skills": ["Process Optimization", "Lean Manufacturing", "Six Sigma", "Time & Motion Studies", "Supply Chain Analysis", "Statistical Analysis", "Quality Control", "AutoCAD", "Simulation Modeling", "Ergonomics", "Cost Analysis"],
+      "preferred_skills": ["Minitab", "Arena Simulation", "Python", "SAP", "Robotics Process Automation"],
+      "certifications": ["PE License (Professional Engineer)", "Six Sigma Black Belt", "Certified Quality Engineer (CQE)", "CPIM (APICS)"],
+      "experience_range": "0-6 years"
+    },
+
+    "Construction Project Manager": {
+      "category": "Construction",
+      "required_skills": ["Project Scheduling", "Cost Estimation", "Blueprint Reading", "Contract Management", "Safety Regulations (OSHA)", "Subcontractor Coordination", "Budgeting", "Quality Assurance", "Permitting", "Client Communication", "Risk Management"],
+      "preferred_skills": ["Procore", "Primavera P6", "BIM Coordination", "LEED Knowledge", "Value Engineering"],
+      "certifications": ["PMP", "CCM (Certified Construction Manager)", "OSHA 30-Hour", "LEED AP"],
+      "experience_range": "3-8 years"
+    },
+    "Estimator": {
+      "category": "Construction",
+      "required_skills": ["Quantity Takeoff", "Cost Estimation", "Blueprint Reading", "Bid Preparation", "Material Pricing", "Subcontractor Solicitation", "Estimating Software", "Scope Analysis", "Proposal Writing", "Construction Methods Knowledge"],
+      "preferred_skills": ["RSMeans Data", "Bluebeam Revu", "Procore", "Heavy Civil Estimating", "BIM Takeoff"],
+      "certifications": ["Certified Professional Estimator (CPE)", "ASPE Certification", "OSHA 10-Hour", "LEED GA"],
+      "experience_range": "1-6 years"
+    },
+    "Safety Manager": {
+      "category": "Construction",
+      "required_skills": ["OSHA Regulations", "Safety Program Development", "Incident Investigation", "Risk Assessment", "Safety Training", "Job Hazard Analysis", "Safety Audits", "Workers Compensation Management", "Emergency Response Planning", "PPE Management", "Recordkeeping (OSHA Logs)"],
+      "preferred_skills": ["Environmental Compliance", "Industrial Hygiene", "Behavior-Based Safety", "Fleet Safety", "Crane Safety"],
+      "certifications": ["CSP (Certified Safety Professional)", "OSHA 30-Hour", "CHST (Construction Health and Safety Technician)", "First Aid/CPR Instructor"],
+      "experience_range": "2-7 years"
+    },
+
+    "Video Producer": {
+      "category": "Creative & Media",
+      "required_skills": ["Video Editing", "Adobe Premiere Pro", "Storyboarding", "Camera Operation", "Lighting Techniques", "Audio Recording", "Color Grading", "Project Management", "Scriptwriting", "Content Planning", "File Management"],
+      "preferred_skills": ["After Effects", "DaVinci Resolve", "Drone Videography", "Live Streaming", "Motion Graphics"],
+      "certifications": ["Adobe Certified Professional (Premiere Pro)", "Final Cut Pro Certification", "FAA Part 107 (Drone)"],
+      "experience_range": "1-5 years"
+    },
+    "Copywriter": {
+      "category": "Creative & Media",
+      "required_skills": ["Copywriting", "Brand Voice Development", "SEO Writing", "Headline Writing", "Content Strategy", "Editing & Proofreading", "Audience Research", "A/B Testing Copy", "Storytelling", "CMS Platforms", "Deadline Management"],
+      "preferred_skills": ["Email Marketing Copy", "UX Writing", "Social Media Copy", "Long-form Content", "Advertising Concepts"],
+      "certifications": ["AWAI Copywriting Certification", "HubSpot Content Marketing", "Google Ads Certification"],
+      "experience_range": "0-4 years"
+    },
+    "Motion Designer": {
+      "category": "Creative & Media",
+      "required_skills": ["After Effects", "Motion Graphics", "Animation Principles", "Typography Animation", "Storyboarding", "Adobe Illustrator", "Video Compositing", "Visual Storytelling", "Color Theory", "Rendering", "Asset Management"],
+      "preferred_skills": ["Cinema 4D", "Blender", "Lottie Animations", "Sound Design", "Character Animation"],
+      "certifications": ["Adobe Certified Professional (After Effects)", "School of Motion Certificate", "Cinema 4D Certification"],
+      "experience_range": "1-5 years"
+    },
+    "Podcast Producer": {
+      "category": "Creative & Media",
+      "required_skills": ["Audio Editing", "Audio Recording", "Sound Mixing", "Content Planning", "Guest Booking & Coordination", "Show Notes Writing", "Podcast Hosting Platforms", "RSS Feed Management", "Interview Techniques", "Project Management"],
+      "preferred_skills": ["Adobe Audition", "Pro Tools", "Podcast Marketing", "Transcription Tools", "Audience Analytics", "Sound Design"],
+      "certifications": ["Audio Engineering Society Certification", "Pro Tools Certification", "HubSpot Content Marketing"],
+      "experience_range": "0-4 years"
+    },
+    "Photographer": {
+      "category": "Creative & Media",
+      "required_skills": ["Camera Operation (DSLR/Mirrorless)", "Lighting Techniques", "Adobe Lightroom", "Adobe Photoshop", "Composition", "Color Correction", "Photo Editing", "Client Communication", "File Management", "Studio Photography", "Location Scouting"],
+      "preferred_skills": ["Drone Photography", "Video Production", "Product Photography", "Photo Retouching", "Portfolio Development"],
+      "certifications": ["Certified Professional Photographer (CPP)", "Adobe Certified Professional (Photoshop)", "FAA Part 107 (Drone)"],
+      "experience_range": "0-5 years"
+    },
+
+    "Hotel Operations Manager": {
+      "category": "Hospitality",
+      "required_skills": ["Hotel Operations", "Revenue Management", "Staff Supervision", "Guest Relations", "Budgeting", "Property Management Systems (PMS)", "Housekeeping Management", "Vendor Management", "Quality Standards Compliance", "Scheduling", "Conflict Resolution"],
+      "preferred_skills": ["Opera PMS", "Food & Beverage Management", "Yield Management", "Event Coordination", "Sustainability Practices"],
+      "certifications": ["CHA (Certified Hotel Administrator)", "CHIA (Certified Hospitality Industry Analyst)", "ServSafe Manager", "AHLEI Certification"],
+      "experience_range": "2-7 years"
+    },
+    "Event Planner": {
+      "category": "Hospitality",
+      "required_skills": ["Event Planning & Coordination", "Budget Management", "Vendor Negotiation", "Venue Selection", "Logistics Coordination", "Client Communication", "Timeline Management", "Contract Negotiation", "On-site Event Management", "Catering Coordination", "Marketing & Promotion"],
+      "preferred_skills": ["Cvent", "Social Tables", "Virtual Event Platforms", "Sponsorship Management", "Floral & Decor Design"],
+      "certifications": ["CMP (Certified Meeting Professional)", "CSEP (Certified Special Events Professional)", "DES (Digital Event Strategist)"],
+      "experience_range": "1-5 years"
+    },
+    "Restaurant Manager": {
+      "category": "Hospitality",
+      "required_skills": ["Restaurant Operations", "Staff Hiring & Training", "Food Cost Control", "Inventory Management", "Health & Safety Compliance", "Customer Service", "POS Systems", "Scheduling", "P&L Management", "Menu Planning", "Conflict Resolution"],
+      "preferred_skills": ["Wine & Beverage Knowledge", "Marketing", "Catering Management", "Toast POS", "Online Ordering Platforms"],
+      "certifications": ["ServSafe Manager", "ServSafe Food Handler", "TIPS Certification", "FMP (Foodservice Management Professional)"],
+      "experience_range": "1-6 years"
+    },
+
+    "Staff Accountant": {
+      "category": "Finance",
+      "required_skills": ["General Ledger Management", "Accounts Payable/Receivable", "Financial Reporting", "GAAP", "Journal Entries", "Bank Reconciliation", "Month-End Close", "Excel", "ERP Systems", "Tax Preparation Basics"],
+      "preferred_skills": ["QuickBooks", "SAP", "NetSuite", "Variance Analysis", "Fixed Asset Accounting"],
+      "certifications": ["CPA", "CMA", "QuickBooks ProAdvisor", "EA (Enrolled Agent)"],
+      "experience_range": "0-3 years"
+    },
+    "Auditor": {
+      "category": "Finance",
+      "required_skills": ["Audit Planning", "Internal Controls Testing", "Financial Statement Analysis", "GAAP/GAAS", "Risk Assessment", "Sampling Techniques", "Workpaper Documentation", "SOX Compliance", "Analytical Procedures", "Client Communication", "Data Analysis"],
+      "preferred_skills": ["ACL/IDEA Software", "IT Audit", "Fraud Detection", "IFRS", "Power BI"],
+      "certifications": ["CPA", "CIA (Certified Internal Auditor)", "CISA", "CFE (Certified Fraud Examiner)"],
+      "experience_range": "0-4 years"
+    },
+    "Tax Analyst": {
+      "category": "Finance",
+      "required_skills": ["Tax Compliance", "Tax Research", "Federal & State Tax Returns", "Tax Provision (ASC 740)", "Excel", "Tax Software", "GAAP", "Fixed Asset Depreciation", "Estimated Tax Payments", "Regulatory Filings", "Data Reconciliation"],
+      "preferred_skills": ["Transfer Pricing", "International Tax", "R&D Tax Credits", "OneSource", "Alteryx"],
+      "certifications": ["CPA", "EA (Enrolled Agent)", "Certified Tax Preparer", "CMA"],
+      "experience_range": "0-4 years"
+    },
+    "Investment Banking Analyst": {
+      "category": "Finance",
+      "required_skills": ["Financial Modeling", "Valuation (DCF, Comps, Precedents)", "Excel", "PowerPoint", "Pitch Book Creation", "M&A Analysis", "Capital Markets Knowledge", "Financial Statement Analysis", "Due Diligence", "Industry Research", "Attention to Detail"],
+      "preferred_skills": ["Bloomberg Terminal", "FactSet", "LBO Modeling", "Debt Capital Markets", "CapIQ"],
+      "certifications": ["CFA Level 1", "Financial Modeling & Valuation Analyst (FMVA)", "Bloomberg Market Concepts", "Series 79"],
+      "experience_range": "0-3 years"
+    },
+    "Risk Analyst": {
+      "category": "Finance",
+      "required_skills": ["Risk Assessment", "Quantitative Analysis", "Financial Modeling", "Excel", "Regulatory Knowledge (Basel III)", "Credit Risk Analysis", "Market Risk Analysis", "Stress Testing", "Data Analysis", "Report Writing", "VaR Calculation"],
+      "preferred_skills": ["Python", "SAS", "SQL", "Monte Carlo Simulation", "Operational Risk"],
+      "certifications": ["FRM (Financial Risk Manager)", "CFA Level 1", "PRM (Professional Risk Manager)", "CFA Institute Certificate in ESG"],
+      "experience_range": "0-4 years"
+    },
+
+    "Management Consultant": {
+      "category": "Consulting",
+      "required_skills": ["Strategic Analysis", "Problem Solving", "Data Analysis", "Stakeholder Management", "Presentation Skills", "Financial Analysis", "Market Research", "Process Improvement", "Excel", "PowerPoint", "Client Communication", "Project Management"],
+      "preferred_skills": ["Change Management", "Organizational Design", "Python", "Tableau", "Industry Expertise"],
+      "certifications": ["PMP", "Six Sigma Green Belt", "CMC (Certified Management Consultant)", "MBA"],
+      "experience_range": "0-5 years"
+    },
+    "Strategy Analyst": {
+      "category": "Consulting",
+      "required_skills": ["Market Analysis", "Competitive Intelligence", "Financial Modeling", "Data Analysis", "Strategic Planning", "Excel", "PowerPoint", "Report Writing", "Business Case Development", "Industry Research"],
+      "preferred_skills": ["SQL", "Tableau", "Scenario Planning", "M&A Analysis", "Customer Segmentation"],
+      "certifications": ["CFA Level 1", "PMP", "Google Data Analytics", "Six Sigma Green Belt"],
+      "experience_range": "0-4 years"
+    },
+    "IT Consultant": {
+      "category": "Consulting",
+      "required_skills": ["IT Strategy", "Systems Analysis", "Requirements Gathering", "Solution Architecture", "Project Management", "Client Communication", "Technology Assessment", "Business Process Analysis", "Documentation", "Vendor Evaluation", "Change Management"],
+      "preferred_skills": ["Cloud Architecture", "ERP Implementation", "Cybersecurity", "Agile/Scrum", "Data Migration"],
+      "certifications": ["PMP", "ITIL Foundation", "AWS Solutions Architect Associate", "TOGAF"],
+      "experience_range": "2-7 years"
+    },
+
+    "Program Manager (Nonprofit)": {
+      "category": "Nonprofit",
+      "required_skills": ["Program Design", "Grant Compliance", "Budget Management", "Stakeholder Engagement", "Outcome Measurement", "Community Outreach", "Report Writing", "Staff Supervision", "Data Collection", "Event Coordination", "Partnership Development"],
+      "preferred_skills": ["Logic Model Development", "CRM (Salesforce Nonprofit)", "DEI Practices", "Volunteer Management", "Advocacy"],
+      "certifications": ["Nonprofit Management Certificate", "PMP", "CNP (Certified Nonprofit Professional)", "Grant Management Certificate"],
+      "experience_range": "2-6 years"
+    },
+    "Grant Writer": {
+      "category": "Nonprofit",
+      "required_skills": ["Grant Research", "Proposal Writing", "Budget Narrative Development", "Funder Relationship Management", "Needs Assessment", "Program Narrative Writing", "Compliance Requirements", "Deadline Management", "Editing & Proofreading", "Outcome Metrics"],
+      "preferred_skills": ["Foundation Directory Online", "Federal Grant Portals (Grants.gov)", "Logic Models", "Data Visualization", "Donor Database Management"],
+      "certifications": ["GPC (Grant Professional Certified)", "CFRE", "Nonprofit Management Certificate"],
+      "experience_range": "1-5 years"
+    },
+    "Fundraising Manager": {
+      "category": "Nonprofit",
+      "required_skills": ["Fundraising Strategy", "Donor Relations", "Major Gifts Solicitation", "Campaign Management", "Event Fundraising", "CRM/Donor Database", "Annual Fund Management", "Stewardship", "Direct Mail Campaigns", "Board Engagement", "Prospect Research"],
+      "preferred_skills": ["Planned Giving", "Corporate Sponsorships", "Raiser's Edge/Blackbaud", "Social Media Fundraising", "Capital Campaigns"],
+      "certifications": ["CFRE (Certified Fund Raising Executive)", "AFP Master Trainer", "Nonprofit Management Certificate"],
+      "experience_range": "2-7 years"
+    },
+
+    "Logistics Coordinator": {
+      "category": "Operations",
+      "required_skills": ["Shipment Tracking", "Freight Coordination", "Inventory Management", "Warehouse Operations", "ERP Systems", "Customs & Import/Export", "Carrier Negotiation", "Order Processing", "Excel", "Communication", "Problem Solving"],
+      "preferred_skills": ["SAP", "TMS Software", "Route Optimization", "Lean Principles", "Power BI"],
+      "certifications": ["APICS CSCP", "CLTD (Certified in Logistics, Transportation and Distribution)", "Customs Broker License", "Six Sigma Yellow Belt"],
+      "experience_range": "0-3 years"
+    },
+    "Operations Manager": {
+      "category": "Operations",
+      "required_skills": ["Operations Strategy", "Process Improvement", "Team Leadership", "Budgeting", "KPI Development", "Quality Management", "Vendor Management", "Project Management", "Data Analysis", "Workforce Planning", "Safety Compliance", "P&L Oversight"],
+      "preferred_skills": ["Lean/Six Sigma", "ERP Systems", "Change Management", "Forecasting", "Automation"],
+      "certifications": ["Six Sigma Black Belt", "PMP", "CPIM (APICS)", "Lean Management Certificate"],
+      "experience_range": "3-8 years"
+    },
+    "Procurement Specialist": {
+      "category": "Operations",
+      "required_skills": ["Sourcing", "Supplier Negotiation", "Contract Management", "Purchase Order Management", "Vendor Evaluation", "Cost Analysis", "ERP Systems", "Compliance", "Market Research", "Inventory Planning"],
+      "preferred_skills": ["SAP Ariba", "Coupa", "Category Management", "Sustainable Procurement", "Global Sourcing"],
+      "certifications": ["CPSM (Certified Professional in Supply Management)", "CPP (Certified Purchasing Professional)", "APICS CSCP", "Six Sigma Green Belt"],
+      "experience_range": "1-5 years"
+    },
+    "Warehouse Manager": {
+      "category": "Operations",
+      "required_skills": ["Warehouse Operations", "Inventory Control", "WMS (Warehouse Management Systems)", "Staff Supervision", "Safety Compliance (OSHA)", "Order Fulfillment", "Receiving & Shipping", "Layout Optimization", "Forklift Operations Oversight", "KPI Tracking", "Quality Control"],
+      "preferred_skills": ["Lean Warehousing", "Automation/Robotics", "RF Scanning Systems", "Demand Forecasting", "Cold Chain Management"],
+      "certifications": ["OSHA 30-Hour", "APICS CSCP", "Certified Warehouse Logistics Professional", "Six Sigma Green Belt"],
+      "experience_range": "2-6 years"
+    },
+
+    "Real Estate Analyst": {
+      "category": "Real Estate",
+      "required_skills": ["Financial Modeling", "DCF Analysis", "Market Research", "Property Valuation", "Excel", "Comparable Sales Analysis", "Lease Analysis", "Due Diligence", "Investment Memo Writing", "Argus Enterprise", "Cap Rate Analysis"],
+      "preferred_skills": ["CoStar", "Power BI", "Real Capital Analytics", "REIT Analysis", "GIS Mapping"],
+      "certifications": ["CFA Level 1", "CCIM (Certified Commercial Investment Member)", "Real Estate License", "Argus Certification"],
+      "experience_range": "0-4 years"
+    },
+    "Property Manager": {
+      "category": "Real Estate",
+      "required_skills": ["Property Operations", "Tenant Relations", "Lease Administration", "Budgeting", "Maintenance Coordination", "Vendor Management", "Rent Collection", "Property Inspections", "Local Housing Regulations", "Financial Reporting", "Conflict Resolution"],
+      "preferred_skills": ["Yardi/AppFolio", "Marketing Vacant Units", "Capital Improvement Planning", "HOA Management", "Commercial Property Management"],
+      "certifications": ["CPM (Certified Property Manager)", "ARM (Accredited Residential Manager)", "Real Estate License", "CAM (Certified Apartment Manager)"],
+      "experience_range": "1-5 years"
+    },
+    "Commercial Real Estate Agent": {
+      "category": "Real Estate",
+      "required_skills": ["Commercial Property Sales", "Lease Negotiation", "Market Analysis", "Client Prospecting", "Property Valuation", "Financial Analysis", "Networking", "CRM Systems", "Presentation Skills", "Contract Preparation", "Due Diligence"],
+      "preferred_skills": ["CoStar", "Investment Sales", "1031 Exchanges", "Site Selection", "Land Development"],
+      "certifications": ["Real Estate License", "CCIM", "SIOR (Society of Industrial and Office Realtors)", "CPM"],
+      "experience_range": "0-5 years"
+    },
+
+    "Electrician": {
+      "category": "Trades",
+      "required_skills": ["Electrical Wiring", "NEC Code Knowledge", "Blueprint Reading", "Circuit Installation", "Troubleshooting", "Conduit Bending", "Panel Installation", "Grounding & Bonding", "Motor Controls", "Safety Practices (OSHA)", "Power Distribution"],
+      "preferred_skills": ["PLC Programming", "Low Voltage Systems", "Fire Alarm Systems", "Solar PV Installation", "Industrial Controls"],
+      "certifications": ["Journeyman Electrician License", "Master Electrician License", "OSHA 10-Hour", "NABCEP PV Installation Professional"],
+      "experience_range": "0-6 years"
+    },
+    "HVAC Technician": {
+      "category": "Trades",
+      "required_skills": ["HVAC Installation", "Refrigeration Systems", "Electrical Troubleshooting", "Ductwork Installation", "EPA Refrigerant Handling", "System Diagnostics", "Preventive Maintenance", "Blueprint Reading", "Thermostat Wiring", "Air Balancing", "Safety Compliance"],
+      "preferred_skills": ["Building Automation Systems", "VRF Systems", "Geothermal Systems", "Energy Auditing", "Commercial HVAC"],
+      "certifications": ["EPA 608 Certification", "NATE Certification", "HVAC Excellence Certification", "OSHA 10-Hour"],
+      "experience_range": "0-5 years"
+    },
+    "Plumber": {
+      "category": "Trades",
+      "required_skills": ["Pipe Installation", "Plumbing Code Knowledge", "Blueprint Reading", "Fixture Installation", "Drain Cleaning", "Water Heater Installation", "Soldering & Brazing", "Pipe Threading", "Leak Detection", "Safety Practices", "Customer Service"],
+      "preferred_skills": ["Backflow Prevention", "Medical Gas Systems", "Fire Sprinkler Systems", "Green Plumbing", "Commercial Plumbing"],
+      "certifications": ["Journeyman Plumber License", "Master Plumber License", "Backflow Prevention Certification", "OSHA 10-Hour"],
+      "experience_range": "0-6 years"
+    }
+  }
+}

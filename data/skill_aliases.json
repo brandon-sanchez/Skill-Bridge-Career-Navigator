@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "description": "Maps common abbreviations and alternate names to their canonical skill names used during resume parsing"
+  },
+  "aliases": {
+    "js": "JavaScript",
+    "ts": "TypeScript",
+    "py": "Python",
+    "k8s": "Kubernetes",
+    "tf": "Terraform",
+    "react.js": "React",
+    "reactjs": "React",
+    "node": "Node.js",
+    "nodejs": "Node.js",
+    "vue": "Vue.js",
+    "vuejs": "Vue.js",
+    "postgres": "PostgreSQL",
+    "mongo": "MongoDB",
+    "aws ec2": "AWS",
+    "aws s3": "AWS",
+    "aws lambda": "AWS",
+    "amazon web services": "AWS",
+    "google cloud": "GCP",
+    "google cloud platform": "GCP",
+    "microsoft azure": "Azure",
+    "ci/cd": "CI/CD",
+    "cicd": "CI/CD",
+    "ml": "Machine Learning",
+    "ai": "Machine Learning",
+    "nlp": "NLP",
+    "dl": "Deep Learning",
+    "scikit learn": "Scikit-learn",
+    "sklearn": "Scikit-learn",
+    "pandas": "Pandas",
+    "numpy": "NumPy",
+    "html5": "HTML",
+    "css3": "CSS",
+    "rest api": "REST APIs",
+    "rest apis": "REST APIs",
+    "restful": "REST APIs",
+    "graphql": "GraphQL"
+  }
+}
