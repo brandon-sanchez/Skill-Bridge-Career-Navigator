@@ -12,7 +12,7 @@ import re
 
 from pypdf import PdfReader
 from docx import Document
-from openai import OpenAI
+from openai import AuthenticationError, RateLimitError, OpenAI
 
 logger = logging.getLogger(__name__)
 
@@ -95,6 +95,10 @@ def extract_skills(resume_text, openai_key=''):
     if openai_key:
         try:
             return _extract_skills_with_ai(resume_text, openai_key)
+        except AuthenticationError:
+            logger.warning("Invalid OpenAI API key — falling back to keyword matching")
+        except RateLimitError:
+            logger.warning("OpenAI rate limit hit — falling back to keyword matching")
         except Exception:
             logger.warning("AI skill extraction failed, falling back to keyword matching", exc_info=True)
 

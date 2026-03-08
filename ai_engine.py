@@ -9,7 +9,7 @@ import logging
 import os
 
 from job_search import fetch_and_aggregate_skills
-from openai import OpenAI
+from openai import AuthenticationError, RateLimitError, OpenAI
 
 logger = logging.getLogger(__name__)
 
@@ -41,8 +41,12 @@ def analyze_gaps(user_skills, target_role, persona, openai_key='', rapidapi_key=
                 user_skills, target_role, persona, market_skills,
                 data_source, postings_analyzed, openai_key
             )
+        except AuthenticationError:
+            logger.warning("Invalid OpenAI API key — falling back to local gap analysis")
+        except RateLimitError:
+            logger.warning("OpenAI rate limit hit — falling back to local gap analysis")
         except Exception:
-            logger.warning("AI gap analysis failed, using fallback to analyize the gaps", exc_info=True)
+            logger.warning("AI gap analysis failed, falling back to local gap analysis", exc_info=True)
 
     return _analyze_gaps_fallback(
         user_skills, target_role, persona, market_skills,
@@ -59,6 +63,10 @@ def generate_roadmap(missing_skills, target_role, persona, openai_key=''):
     if openai_key:
         try:
             return _generate_roadmap_with_ai(missing_skills, target_role, persona, openai_key)
+        except AuthenticationError:
+            logger.warning("Invalid OpenAI API key — falling back to curated resources")
+        except RateLimitError:
+            logger.warning("OpenAI rate limit hit — falling back to curated resources")
         except Exception:
             logger.warning("AI roadmap generation failed, falling back to curated resources", exc_info=True)
 

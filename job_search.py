@@ -30,8 +30,13 @@ def fetch_and_aggregate_skills(target_role, rapidapi_key=''):
                     'source': 'Live job postings (LinkedIn, Indeed, Glassdoor & more)',
                     'postings_count': len(postings),
                 }
+        except requests.exceptions.HTTPError as e:
+            if e.response is not None and e.response.status_code in (401, 403):
+                logger.warning("Invalid or expired RapidAPI key — falling back to synthetic data")
+            else:
+                logger.warning("JSearch API call failed, falling back to synthetic data", exc_info=True)
         except Exception:
-            logger.warning("JSearch API call failed, falling back to data", exc_info=True)
+            logger.warning("JSearch API call failed, falling back to synthetic data", exc_info=True)
 
     return _fetch_synthetic_skills(target_role)
 
