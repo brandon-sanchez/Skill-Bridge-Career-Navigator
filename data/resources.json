@@ -1,128 +1,142 @@
 {
   "_meta": {
-    "description": "Learning resources for common skills that is used as a fallback for the AI"
+    "description": "Curated learning resources used as a fallback when AI is unavailable. Real URLs to specific courses, videos, and articles across diverse platforms."
   },
   "skills": {
     "Python": {
       "free": [
-        {"title": "Python for Everybody Specialization", "platform": "Coursera (audit free)", "url": "https://www.coursera.org/specializations/python", "est_hours": 60},
-        {"title": "Automate the Boring Stuff with Python", "platform": "Online Book (free)", "url": "https://automatetheboringstuff.com/", "est_hours": 30},
-        {"title": "CS50's Introduction to Programming with Python", "platform": "Harvard/edX", "url": "https://cs50.harvard.edu/python/", "est_hours": 40}
+        {"title": "CS50's Introduction to Programming with Python", "platform": "Harvard OpenCourseWare", "url": "https://cs50.harvard.edu/python/", "est_hours": 40},
+        {"title": "Python for Everybody - Full University Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=8DvywoWv6fI", "est_hours": 14},
+        {"title": "Automate the Boring Stuff with Python", "platform": "Free Online Book", "url": "https://automatetheboringstuff.com/", "est_hours": 30},
+        {"title": "Python Tutorial - W3Schools", "platform": "W3Schools", "url": "https://www.w3schools.com/python/", "est_hours": 15}
       ],
       "paid": [
-        {"title": "100 Days of Code: The Complete Python Pro Bootcamp", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=100+days+of+code+python", "est_hours": 60, "price_range": "$12-15"},
-        {"title": "Python 3 Programming Specialization", "platform": "Coursera", "url": "https://www.coursera.org/specializations/python-3-programming", "est_hours": 50, "price_range": "$49/mo"}
+        {"title": "100 Days of Code: Complete Python Pro Bootcamp", "platform": "Udemy", "url": "https://www.udemy.com/course/100-days-of-code/", "est_hours": 60, "price_range": "$12-15"},
+        {"title": "Python 3 Programming Specialization", "platform": "Coursera (U of Michigan)", "url": "https://www.coursera.org/specializations/python-3-programming", "est_hours": 50, "price_range": "$49/mo"}
       ]
     },
     "JavaScript": {
       "free": [
-        {"title": "The Odin Project - Full Stack JavaScript", "platform": "The Odin Project", "url": "https://www.theodinproject.com/paths/full-stack-javascript", "est_hours": 200},
-        {"title": "JavaScript.info - The Modern JavaScript Tutorial", "platform": "Online Tutorial", "url": "https://javascript.info/", "est_hours": 40},
-        {"title": "freeCodeCamp JavaScript Algorithms and Data Structures", "platform": "freeCodeCamp", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", "est_hours": 50}
+        {"title": "JavaScript Algorithms and Data Structures", "platform": "freeCodeCamp", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/", "est_hours": 50},
+        {"title": "The Modern JavaScript Tutorial", "platform": "javascript.info", "url": "https://javascript.info/", "est_hours": 40},
+        {"title": "JavaScript Full Course for Beginners", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg", "est_hours": 4},
+        {"title": "The Odin Project - Full Stack JavaScript", "platform": "The Odin Project", "url": "https://www.theodinproject.com/paths/full-stack-javascript", "est_hours": 200}
       ],
       "paid": [
-        {"title": "The Complete JavaScript Course 2024", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=complete+javascript+course", "est_hours": 70, "price_range": "$12-15"},
-        {"title": "JavaScript: Understanding the Weird Parts", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=javascript+weird+parts", "est_hours": 12, "price_range": "$12-15"}
+        {"title": "The Complete JavaScript Course 2024", "platform": "Udemy (Jonas Schmedtmann)", "url": "https://www.udemy.com/course/the-complete-javascript-course/", "est_hours": 69, "price_range": "$12-15"}
       ]
     },
     "AWS": {
       "free": [
         {"title": "AWS Cloud Practitioner Essentials", "platform": "AWS Training", "url": "https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/", "est_hours": 6},
-        {"title": "AWS Well-Architected Labs", "platform": "AWS", "url": "https://www.wellarchitectedlabs.com/", "est_hours": 20},
-        {"title": "freeCodeCamp AWS Certified Cloud Practitioner", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=freecodecamp+aws+cloud+practitioner", "est_hours": 14}
+        {"title": "AWS Certified Cloud Practitioner - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=SOTamWNgDKc", "est_hours": 14},
+        {"title": "AWS Well-Architected Labs", "platform": "AWS", "url": "https://www.wellarchitectedlabs.com/", "est_hours": 20}
       ],
       "paid": [
-        {"title": "Ultimate AWS Certified Solutions Architect Associate", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=aws+solutions+architect+stephane+maarek", "est_hours": 27, "price_range": "$12-15"},
-        {"title": "AWS Certified Security Specialty", "platform": "A Cloud Guru", "url": "https://www.pluralsight.com/cloud-guru", "est_hours": 20, "price_range": "$35/mo"}
+        {"title": "Ultimate AWS Certified Solutions Architect Associate", "platform": "Udemy (Stephane Maarek)", "url": "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/", "est_hours": 27, "price_range": "$12-15"},
+        {"title": "AWS Cloud Technical Essentials", "platform": "Coursera (AWS)", "url": "https://www.coursera.org/learn/aws-cloud-technical-essentials", "est_hours": 16, "price_range": "$49/mo"}
       ]
     },
     "Docker": {
       "free": [
-        {"title": "Docker Official Getting Started Guide", "platform": "Docker Docs", "url": "https://docs.docker.com/get-started/", "est_hours": 5},
-        {"title": "Docker Tutorial for Beginners", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=docker+tutorial+beginners+techworld+nana", "est_hours": 4}
+        {"title": "Docker Tutorial for Beginners - Full Course", "platform": "YouTube (TechWorld with Nana)", "url": "https://www.youtube.com/watch?v=3c-iBn73dDE", "est_hours": 3},
+        {"title": "Docker Getting Started Guide", "platform": "Docker Docs", "url": "https://docs.docker.com/get-started/", "est_hours": 5},
+        {"title": "Docker Tutorial - GeeksforGeeks", "platform": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/docker-tutorial/", "est_hours": 8}
       ],
       "paid": [
-        {"title": "Docker & Kubernetes: The Practical Guide", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=docker+kubernetes+practical+guide", "est_hours": 24, "price_range": "$12-15"}
+        {"title": "Docker & Kubernetes: The Practical Guide", "platform": "Udemy (Maximilian Schwarzmuller)", "url": "https://www.udemy.com/course/docker-kubernetes-the-practical-guide/", "est_hours": 24, "price_range": "$12-15"}
       ]
     },
     "Kubernetes": {
       "free": [
+        {"title": "Kubernetes Course - Full Beginners Tutorial", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=d6WC5n9G_sM", "est_hours": 4},
         {"title": "Kubernetes Official Tutorials", "platform": "kubernetes.io", "url": "https://kubernetes.io/docs/tutorials/", "est_hours": 10},
-        {"title": "Kubernetes Course - Full Beginners Tutorial", "platform": "YouTube/freeCodeCamp", "url": "https://www.youtube.com/results?search_query=freecodecamp+kubernetes+full+course", "est_hours": 4}
+        {"title": "Introduction to Kubernetes", "platform": "edX (Linux Foundation)", "url": "https://www.edx.org/learn/kubernetes/the-linux-foundation-introduction-to-kubernetes", "est_hours": 15}
       ],
       "paid": [
-        {"title": "Certified Kubernetes Administrator (CKA) with Practice Tests", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=CKA+kubernetes+mumshad", "est_hours": 17, "price_range": "$12-15"}
+        {"title": "CKA Certification Course with Practice Tests", "platform": "Udemy (Mumshad Mannambeth)", "url": "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/", "est_hours": 17, "price_range": "$12-15"}
       ]
     },
     "React": {
       "free": [
-        {"title": "React Official Tutorial", "platform": "react.dev", "url": "https://react.dev/learn", "est_hours": 10},
-        {"title": "Full React Course 2024", "platform": "YouTube/freeCodeCamp", "url": "https://www.youtube.com/results?search_query=freecodecamp+react+full+course", "est_hours": 12}
+        {"title": "React Official Tutorial - Tic-Tac-Toe", "platform": "react.dev", "url": "https://react.dev/learn/tutorial-tic-tac-toe", "est_hours": 3},
+        {"title": "React Course - Beginners Tutorial", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=bMknfKXIFA8", "est_hours": 12},
+        {"title": "React Tutorial - W3Schools", "platform": "W3Schools", "url": "https://www.w3schools.com/react/", "est_hours": 10}
       ],
       "paid": [
-        {"title": "React - The Complete Guide", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=react+complete+guide+schwarzmuller", "est_hours": 50, "price_range": "$12-15"}
+        {"title": "React - The Complete Guide 2024", "platform": "Udemy (Maximilian Schwarzmuller)", "url": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", "est_hours": 50, "price_range": "$12-15"}
       ]
     },
     "SQL": {
       "free": [
         {"title": "SQLBolt - Interactive SQL Lessons", "platform": "SQLBolt", "url": "https://sqlbolt.com/", "est_hours": 5},
-        {"title": "Khan Academy - Intro to SQL", "platform": "Khan Academy", "url": "https://www.khanacademy.org/computing/computer-programming/sql", "est_hours": 8},
-        {"title": "SQL Tutorial - Full Database Course", "platform": "YouTube/freeCodeCamp", "url": "https://www.youtube.com/results?search_query=freecodecamp+sql+full+course", "est_hours": 5}
+        {"title": "SQL Tutorial - Full Database Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY", "est_hours": 4},
+        {"title": "Intro to SQL - Khan Academy", "platform": "Khan Academy", "url": "https://www.khanacademy.org/computing/computer-programming/sql", "est_hours": 8},
+        {"title": "SQL Tutorial - W3Schools", "platform": "W3Schools", "url": "https://www.w3schools.com/sql/", "est_hours": 10},
+        {"title": "SQL Tutorial - GeeksforGeeks", "platform": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/sql-tutorial/", "est_hours": 12}
       ],
       "paid": [
-        {"title": "The Complete SQL Bootcamp", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=complete+sql+bootcamp", "est_hours": 9, "price_range": "$12-15"}
+        {"title": "The Complete SQL Bootcamp", "platform": "Udemy (Jose Portilla)", "url": "https://www.udemy.com/course/the-complete-sql-bootcamp/", "est_hours": 9, "price_range": "$12-15"}
       ]
     },
     "Terraform": {
       "free": [
-        {"title": "Terraform Official Tutorials", "platform": "HashiCorp Learn", "url": "https://developer.hashicorp.com/terraform/tutorials", "est_hours": 15},
-        {"title": "Terraform Course - Automate your AWS cloud infrastructure", "platform": "YouTube/freeCodeCamp", "url": "https://www.youtube.com/results?search_query=freecodecamp+terraform+course", "est_hours": 3}
+        {"title": "Terraform Official Tutorials", "platform": "HashiCorp Developer", "url": "https://developer.hashicorp.com/terraform/tutorials", "est_hours": 15},
+        {"title": "Terraform Course - Automate Your AWS Cloud", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=SLB_c_ayRMo", "est_hours": 3},
+        {"title": "Terraform Tutorial - GeeksforGeeks", "platform": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/terraform/", "est_hours": 8}
       ],
       "paid": [
-        {"title": "HashiCorp Certified: Terraform Associate", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=terraform+associate+certification", "est_hours": 14, "price_range": "$12-15"}
+        {"title": "HashiCorp Certified: Terraform Associate", "platform": "Udemy (Zeal Vora)", "url": "https://www.udemy.com/course/terraform-beginner-to-advanced/", "est_hours": 14, "price_range": "$12-15"}
       ]
     },
     "Network Security": {
       "free": [
-        {"title": "Cybersecurity for Beginners", "platform": "Coursera (audit free)", "url": "https://www.coursera.org/search?query=network+security", "est_hours": 20},
-        {"title": "Professor Messer CompTIA Security+ Course", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=professor+messer+security+plus", "est_hours": 20}
+        {"title": "Professor Messer's CompTIA Security+ Course", "platform": "YouTube (Professor Messer)", "url": "https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv", "est_hours": 20},
+        {"title": "IBM Cybersecurity Analyst Professional Certificate", "platform": "Coursera (IBM)", "url": "https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst", "est_hours": 50},
+        {"title": "Introduction to Cybersecurity - Cisco", "platform": "Cisco Networking Academy", "url": "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity", "est_hours": 15}
       ],
       "paid": [
-        {"title": "CompTIA Security+ (SY0-701) Complete Course", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=comptia+security+plus", "est_hours": 25, "price_range": "$12-15"}
+        {"title": "CompTIA Security+ (SY0-701) Complete Course", "platform": "Udemy (Jason Dion)", "url": "https://www.udemy.com/course/securityplus/", "est_hours": 25, "price_range": "$12-15"}
       ]
     },
     "Machine Learning": {
       "free": [
-        {"title": "Machine Learning by Andrew Ng", "platform": "Coursera (audit free)", "url": "https://www.coursera.org/learn/machine-learning", "est_hours": 60},
-        {"title": "fast.ai Practical Deep Learning", "platform": "fast.ai", "url": "https://course.fast.ai/", "est_hours": 40},
-        {"title": "Google Machine Learning Crash Course", "platform": "Google", "url": "https://developers.google.com/machine-learning/crash-course", "est_hours": 15}
+        {"title": "Machine Learning Specialization", "platform": "Coursera (Andrew Ng / Stanford)", "url": "https://www.coursera.org/specializations/machine-learning-introduction", "est_hours": 60},
+        {"title": "Practical Deep Learning for Coders", "platform": "fast.ai", "url": "https://course.fast.ai/", "est_hours": 40},
+        {"title": "Machine Learning with Python - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=7eh4d6sabA0", "est_hours": 5},
+        {"title": "Google Machine Learning Crash Course", "platform": "Google Developers", "url": "https://developers.google.com/machine-learning/crash-course", "est_hours": 15},
+        {"title": "Machine Learning for Everybody", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg", "est_hours": 4}
       ],
       "paid": [
-        {"title": "Machine Learning A-Z", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=machine+learning+a-z", "est_hours": 45, "price_range": "$12-15"}
+        {"title": "Deep Learning Specialization", "platform": "Coursera (DeepLearning.AI)", "url": "https://www.coursera.org/specializations/deep-learning", "est_hours": 80, "price_range": "$49/mo"}
       ]
     },
     "Git": {
       "free": [
-        {"title": "Git & GitHub Crash Course", "platform": "YouTube/freeCodeCamp", "url": "https://www.youtube.com/results?search_query=freecodecamp+git+github+crash+course", "est_hours": 2},
-        {"title": "Learn Git Branching (Interactive)", "platform": "learngitbranching.js.org", "url": "https://learngitbranching.js.org/", "est_hours": 3}
+        {"title": "Git and GitHub for Beginners - Crash Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=RGOj5yH7evk", "est_hours": 1},
+        {"title": "Learn Git Branching (Interactive)", "platform": "learngitbranching.js.org", "url": "https://learngitbranching.js.org/", "est_hours": 3},
+        {"title": "Git Tutorial - W3Schools", "platform": "W3Schools", "url": "https://www.w3schools.com/git/", "est_hours": 5}
       ],
       "paid": [
-        {"title": "Git Complete: The definitive, step-by-step guide to Git", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=git+complete", "est_hours": 6, "price_range": "$12-15"}
+        {"title": "Git Complete: Definitive Guide to Git", "platform": "Udemy", "url": "https://www.udemy.com/course/git-complete/", "est_hours": 6, "price_range": "$12-15"}
       ]
     },
     "Linux": {
       "free": [
         {"title": "Linux Journey", "platform": "linuxjourney.com", "url": "https://linuxjourney.com/", "est_hours": 15},
-        {"title": "Introduction to Linux - Full Course", "platform": "YouTube/freeCodeCamp", "url": "https://www.youtube.com/results?search_query=freecodecamp+linux+full+course", "est_hours": 6}
+        {"title": "Introduction to Linux - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8", "est_hours": 6},
+        {"title": "Introduction to Linux", "platform": "edX (Linux Foundation)", "url": "https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux", "est_hours": 14},
+        {"title": "Linux Tutorial - GeeksforGeeks", "platform": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/linux-tutorial/", "est_hours": 10}
       ],
       "paid": [
-        {"title": "Linux Mastery: Master the Linux Command Line", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=linux+mastery", "est_hours": 12, "price_range": "$12-15"}
+        {"title": "Linux Mastery: Master the Linux Command Line", "platform": "Udemy", "url": "https://www.udemy.com/course/linux-mastery/", "est_hours": 12, "price_range": "$12-15"}
       ]
     },
     "SIEM": {
       "free": [
         {"title": "Splunk Fundamentals 1", "platform": "Splunk Education", "url": "https://education.splunk.com/", "est_hours": 12},
-        {"title": "SIEM Tutorial for Beginners", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=SIEM+tutorial+beginners", "est_hours": 3}
+        {"title": "SIEM Concepts and Fundamentals", "platform": "YouTube (NetworkChuck)", "url": "https://www.youtube.com/watch?v=Fv0fAGBGOLQ", "est_hours": 1},
+        {"title": "Google Cybersecurity Certificate - Detection & Response", "platform": "Coursera (Google)", "url": "https://www.coursera.org/professional-certificates/google-cybersecurity", "est_hours": 20}
       ],
       "paid": [
         {"title": "Splunk Core Certified User", "platform": "Splunk Education", "url": "https://education.splunk.com/", "est_hours": 15, "price_range": "$150-300"}
@@ -130,66 +144,196 @@
     },
     "CI/CD": {
       "free": [
-        {"title": "GitHub Actions Tutorial", "platform": "GitHub Docs", "url": "https://docs.github.com/en/actions/learn-github-actions", "est_hours": 5},
-        {"title": "CI/CD Pipeline Tutorial", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=CI+CD+pipeline+tutorial+beginners", "est_hours": 3}
+        {"title": "GitHub Actions Tutorial - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=R8_veQiYBjI", "est_hours": 2},
+        {"title": "Learn GitHub Actions", "platform": "GitHub Docs", "url": "https://docs.github.com/en/actions/learn-github-actions", "est_hours": 5},
+        {"title": "CI/CD Tutorial - GeeksforGeeks", "platform": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/ci-cd-continuous-integration-and-continuous-delivery/", "est_hours": 4}
       ],
       "paid": [
-        {"title": "The Complete CI/CD Course", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=CI+CD+devops", "est_hours": 10, "price_range": "$12-15"}
+        {"title": "DevOps: CI/CD with Jenkins Pipelines and Docker", "platform": "Udemy", "url": "https://www.udemy.com/course/learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker/", "est_hours": 10, "price_range": "$12-15"}
       ]
     },
     "SEO": {
       "free": [
-        {"title": "Google SEO Starter Guide", "platform": "Google", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "est_hours": 3},
-        {"title": "SEO Full Course for Beginners", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=SEO+full+course+beginners+2024", "est_hours": 5}
+        {"title": "Google SEO Starter Guide", "platform": "Google Developers", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "est_hours": 3},
+        {"title": "SEO Full Course for Beginners", "platform": "YouTube (Ahrefs)", "url": "https://www.youtube.com/watch?v=DvwS7cV9GmQ", "est_hours": 2},
+        {"title": "Semrush SEO Certification", "platform": "Semrush Academy", "url": "https://www.semrush.com/academy/", "est_hours": 8}
       ],
       "paid": [
-        {"title": "SEO Training Masterclass", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=SEO+training+masterclass", "est_hours": 12, "price_range": "$12-15"},
-        {"title": "Semrush SEO Certification", "platform": "Semrush Academy", "url": "https://www.semrush.com/academy/", "est_hours": 8, "price_range": "Free with Semrush"}
+        {"title": "SEO 2024: Complete SEO Training", "platform": "Udemy", "url": "https://www.udemy.com/course/seo-training/", "est_hours": 12, "price_range": "$12-15"}
       ]
     },
     "Data Visualization": {
       "free": [
-        {"title": "Data Visualization with Python", "platform": "Coursera (audit free)", "url": "https://www.coursera.org/search?query=data+visualization+python", "est_hours": 15},
-        {"title": "Tableau Public Tutorial", "platform": "Tableau", "url": "https://public.tableau.com/app/resources/learn", "est_hours": 8}
+        {"title": "Data Visualization with Python", "platform": "Coursera (IBM)", "url": "https://www.coursera.org/learn/python-for-data-visualization", "est_hours": 15},
+        {"title": "Tableau for Beginners - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=TPMlZxRRaBQ", "est_hours": 6},
+        {"title": "Tableau Public - Free Training", "platform": "Tableau", "url": "https://public.tableau.com/app/resources/learn", "est_hours": 8}
       ],
       "paid": [
-        {"title": "Tableau 2024 A-Z: Hands-On Tableau Training", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=tableau+a-z", "est_hours": 12, "price_range": "$12-15"}
+        {"title": "Tableau 2024 A-Z: Hands-On Training", "platform": "Udemy (Kirill Eremenko)", "url": "https://www.udemy.com/course/tableau10/", "est_hours": 12, "price_range": "$12-15"}
       ]
     },
     "Incident Response": {
       "free": [
-        {"title": "NIST Computer Security Incident Handling Guide", "platform": "NIST", "url": "https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final", "est_hours": 8},
-        {"title": "Incident Response Training", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=incident+response+cybersecurity+training", "est_hours": 5}
+        {"title": "NIST Incident Handling Guide (SP 800-61r2)", "platform": "NIST", "url": "https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final", "est_hours": 8},
+        {"title": "Incident Response - TryHackMe", "platform": "TryHackMe", "url": "https://tryhackme.com/room/introtoir", "est_hours": 3},
+        {"title": "Google Cybersecurity Certificate", "platform": "Coursera (Google)", "url": "https://www.coursera.org/professional-certificates/google-cybersecurity", "est_hours": 40}
       ],
       "paid": [
-        {"title": "CompTIA CySA+ (Cybersecurity Analyst)", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=comptia+cysa+plus", "est_hours": 30, "price_range": "$12-15"}
+        {"title": "CompTIA CySA+ (CS0-003) Complete Course", "platform": "Udemy (Jason Dion)", "url": "https://www.udemy.com/course/comptiacsaplus/", "est_hours": 30, "price_range": "$12-15"}
       ]
     },
     "TypeScript": {
       "free": [
         {"title": "TypeScript Official Handbook", "platform": "typescriptlang.org", "url": "https://www.typescriptlang.org/docs/handbook/", "est_hours": 10},
-        {"title": "TypeScript Full Course for Beginners", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=typescript+full+course+beginners", "est_hours": 5}
+        {"title": "TypeScript Full Course for Beginners", "platform": "YouTube (Dave Gray)", "url": "https://www.youtube.com/watch?v=gieEQFIfgYc", "est_hours": 8},
+        {"title": "TypeScript Tutorial - W3Schools", "platform": "W3Schools", "url": "https://www.w3schools.com/typescript/", "est_hours": 6}
       ],
       "paid": [
-        {"title": "Understanding TypeScript", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=understanding+typescript", "est_hours": 15, "price_range": "$12-15"}
+        {"title": "Understanding TypeScript", "platform": "Udemy (Maximilian Schwarzmuller)", "url": "https://www.udemy.com/course/understanding-typescript/", "est_hours": 15, "price_range": "$12-15"}
       ]
     },
     "Figma": {
       "free": [
-        {"title": "Figma for Beginners Tutorial", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=figma+beginners+tutorial+2024", "est_hours": 5},
+        {"title": "Figma UI Design Tutorial - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc", "est_hours": 6},
         {"title": "Figma Official Getting Started", "platform": "Figma", "url": "https://help.figma.com/hc/en-us/categories/360002051613-Getting-started", "est_hours": 3}
       ],
       "paid": [
-        {"title": "Figma UI UX Design Essentials", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=figma+UI+UX+design", "est_hours": 15, "price_range": "$12-15"}
+        {"title": "Figma UI/UX Design Essentials", "platform": "Udemy (Daniel Walter Scott)", "url": "https://www.udemy.com/course/figma-ux-ui-design-user-experience-tutorial-course/", "est_hours": 15, "price_range": "$12-15"}
       ]
     },
     "Excel": {
       "free": [
-        {"title": "Excel Skills for Business Specialization", "platform": "Coursera (audit free)", "url": "https://www.coursera.org/specializations/excel", "est_hours": 30},
-        {"title": "Excel Tutorial for Beginners", "platform": "YouTube", "url": "https://www.youtube.com/results?search_query=excel+full+course+beginners", "est_hours": 5}
+        {"title": "Excel Skills for Business Specialization", "platform": "Coursera (Macquarie University)", "url": "https://www.coursera.org/specializations/excel", "est_hours": 30},
+        {"title": "Excel Tutorial for Beginners - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=Vl0H-qTclOg", "est_hours": 3},
+        {"title": "Excel Tutorial - W3Schools", "platform": "W3Schools", "url": "https://www.w3schools.com/excel/", "est_hours": 8}
       ],
       "paid": [
-        {"title": "Microsoft Excel - Excel from Beginner to Advanced", "platform": "Udemy", "url": "https://www.udemy.com/courses/search/?q=excel+beginner+advanced", "est_hours": 18, "price_range": "$12-15"}
+        {"title": "Microsoft Excel - Beginner to Advanced", "platform": "Udemy (Kyle Pew)", "url": "https://www.udemy.com/course/microsoft-excel-2013-from-beginner-to-advanced-and-beyond/", "est_hours": 18, "price_range": "$12-15"}
+      ]
+    },
+    "Deep Learning": {
+      "free": [
+        {"title": "Deep Learning Crash Course for Beginners", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=VyWAvY2CF9c", "est_hours": 2},
+        {"title": "Practical Deep Learning for Coders", "platform": "fast.ai", "url": "https://course.fast.ai/", "est_hours": 40},
+        {"title": "MIT Introduction to Deep Learning", "platform": "YouTube (MIT)", "url": "https://www.youtube.com/watch?v=ErnWZxJovaM&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI", "est_hours": 20}
+      ],
+      "paid": [
+        {"title": "Deep Learning Specialization", "platform": "Coursera (DeepLearning.AI)", "url": "https://www.coursera.org/specializations/deep-learning", "est_hours": 80, "price_range": "$49/mo"}
+      ]
+    },
+    "TensorFlow": {
+      "free": [
+        {"title": "TensorFlow 2.0 Complete Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=tPYj3fFJGjk", "est_hours": 7},
+        {"title": "TensorFlow Official Tutorials", "platform": "tensorflow.org", "url": "https://www.tensorflow.org/tutorials", "est_hours": 10},
+        {"title": "DeepLearning.AI TensorFlow Developer Certificate", "platform": "Coursera (DeepLearning.AI)", "url": "https://www.coursera.org/professional-certificates/tensorflow-in-practice", "est_hours": 40}
+      ],
+      "paid": [
+        {"title": "TensorFlow Developer Certificate Bootcamp", "platform": "Udemy (Daniel Bourke)", "url": "https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/", "est_hours": 64, "price_range": "$12-15"}
+      ]
+    },
+    "Pandas": {
+      "free": [
+        {"title": "Data Analysis with Python - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8", "est_hours": 5},
+        {"title": "Pandas Official Getting Started", "platform": "pandas.pydata.org", "url": "https://pandas.pydata.org/docs/getting_started/index.html", "est_hours": 5},
+        {"title": "Pandas Tutorial - GeeksforGeeks", "platform": "GeeksforGeeks", "url": "https://www.geeksforgeeks.org/pandas-tutorial/", "est_hours": 8}
+      ],
+      "paid": [
+        {"title": "Data Analysis with Pandas and Python", "platform": "Udemy (Boris Paskhaver)", "url": "https://www.udemy.com/course/data-analysis-with-pandas/", "est_hours": 19, "price_range": "$12-15"}
+      ]
+    },
+    "Splunk": {
+      "free": [
+        {"title": "Splunk Fundamentals 1", "platform": "Splunk Education (Free)", "url": "https://education.splunk.com/", "est_hours": 12},
+        {"title": "Splunk Tutorial for Beginners", "platform": "YouTube (Edureka)", "url": "https://www.youtube.com/watch?v=sKdHkNMD_uo", "est_hours": 4}
+      ],
+      "paid": [
+        {"title": "Splunk 2024 Beginner to Architect", "platform": "Udemy", "url": "https://www.udemy.com/course/splunker/", "est_hours": 18, "price_range": "$12-15"}
+      ]
+    },
+    "Node.js": {
+      "free": [
+        {"title": "Node.js and Express.js - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=Oe421EPjeBE", "est_hours": 8},
+        {"title": "Node.js Official Getting Started Guide", "platform": "nodejs.org", "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs", "est_hours": 5},
+        {"title": "The Odin Project - NodeJS", "platform": "The Odin Project", "url": "https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs", "est_hours": 40}
+      ],
+      "paid": [
+        {"title": "The Complete Node.js Developer Course", "platform": "Udemy (Andrew Mead)", "url": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/", "est_hours": 35, "price_range": "$12-15"},
+        {"title": "Server-side Development with NodeJS, Express and MongoDB", "platform": "Coursera (HKUST)", "url": "https://www.coursera.org/learn/server-side-nodejs", "est_hours": 30, "price_range": "$49/mo"}
+      ]
+    },
+    "Django": {
+      "free": [
+        {"title": "Python Django Tutorial for Beginners", "platform": "YouTube (Programming with Mosh)", "url": "https://www.youtube.com/watch?v=rHux0gMZ3Eg", "est_hours": 1},
+        {"title": "Django Official Tutorial", "platform": "djangoproject.com", "url": "https://docs.djangoproject.com/en/5.0/intro/tutorial01/", "est_hours": 8},
+        {"title": "Django For Everybody", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=o0XbHvKxw7Y", "est_hours": 18}
+      ],
+      "paid": [
+        {"title": "Python Django - The Practical Guide", "platform": "Udemy (Maximilian Schwarzmuller)", "url": "https://www.udemy.com/course/python-django-the-practical-guide/", "est_hours": 23, "price_range": "$12-15"}
+      ]
+    },
+    "Vue.js": {
+      "free": [
+        {"title": "Vue.js Course for Beginners", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=FXpIoQ_rT_c", "est_hours": 4},
+        {"title": "Vue.js Official Tutorial", "platform": "vuejs.org", "url": "https://vuejs.org/tutorial/", "est_hours": 5}
+      ],
+      "paid": [
+        {"title": "Vue - The Complete Guide", "platform": "Udemy (Maximilian Schwarzmuller)", "url": "https://www.udemy.com/course/vuejs-2-the-complete-guide/", "est_hours": 32, "price_range": "$12-15"}
+      ]
+    },
+    "Angular": {
+      "free": [
+        {"title": "Angular Tutorial for Beginners - Full App", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo", "est_hours": 2},
+        {"title": "Angular Official Tutorial - Tour of Heroes", "platform": "angular.io", "url": "https://angular.dev/tutorials", "est_hours": 10}
+      ],
+      "paid": [
+        {"title": "Angular - The Complete Guide", "platform": "Udemy (Maximilian Schwarzmuller)", "url": "https://www.udemy.com/course/the-complete-guide-to-angular-2/", "est_hours": 37, "price_range": "$12-15"}
+      ]
+    },
+    "Azure": {
+      "free": [
+        {"title": "Microsoft Azure Fundamentals (AZ-900) - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=NKEFWyqJ5XA", "est_hours": 5},
+        {"title": "Azure Fundamentals Learning Path", "platform": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/training/paths/az-900-describe-cloud-concepts/", "est_hours": 10}
+      ],
+      "paid": [
+        {"title": "AZ-900 Azure Fundamentals Exam Prep", "platform": "Udemy (Scott Duffy)", "url": "https://www.udemy.com/course/az900-azure/", "est_hours": 11, "price_range": "$12-15"}
+      ]
+    },
+    "GCP": {
+      "free": [
+        {"title": "Google Cloud Digital Leader Certification Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=UGRDM86MBSQ", "est_hours": 6},
+        {"title": "Google Cloud Skills Boost - Free Tier", "platform": "Google Cloud", "url": "https://www.cloudskillsboost.google/paths", "est_hours": 15}
+      ],
+      "paid": [
+        {"title": "Google Cloud Professional Cloud Architect", "platform": "Coursera (Google Cloud)", "url": "https://www.coursera.org/professional-certificates/gcp-cloud-architect", "est_hours": 40, "price_range": "$49/mo"},
+        {"title": "GCP Associate Cloud Engineer - Full Course", "platform": "Udemy (Dan Sullivan)", "url": "https://www.udemy.com/course/google-cloud-certification-associate-cloud-engineer/", "est_hours": 20, "price_range": "$12-15"}
+      ]
+    },
+    "Agile/Scrum": {
+      "free": [
+        {"title": "Agile with Atlassian Jira", "platform": "Coursera (Atlassian) - Free Audit", "url": "https://www.coursera.org/learn/agile-atlassian-jira", "est_hours": 8},
+        {"title": "Scrum Guide", "platform": "Scrum.org (Official)", "url": "https://scrumguides.org/scrum-guide.html", "est_hours": 1},
+        {"title": "Intro to Scrum and Agile Project Management", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=uYMkIDaQ2xg", "est_hours": 1}
+      ],
+      "paid": [
+        {"title": "Complete Agile Scrum Master Certification Training", "platform": "Udemy", "url": "https://www.udemy.com/course/complete-professional-scrum-master-training-exam-simulator/", "est_hours": 10, "price_range": "$12-15"}
+      ]
+    },
+    "Jenkins": {
+      "free": [
+        {"title": "Jenkins Full Course - 4 Hours", "platform": "YouTube (Edureka)", "url": "https://www.youtube.com/watch?v=FX322RVNGj4", "est_hours": 4},
+        {"title": "Jenkins Official User Documentation", "platform": "jenkins.io", "url": "https://www.jenkins.io/doc/", "est_hours": 10}
+      ],
+      "paid": [
+        {"title": "Jenkins, From Zero To Hero", "platform": "Udemy (Ricardo Andre Gonzalez)", "url": "https://www.udemy.com/course/jenkins-from-zero-to-hero/", "est_hours": 10, "price_range": "$12-15"}
+      ]
+    },
+    "REST APIs": {
+      "free": [
+        {"title": "APIs for Beginners - Full Course", "platform": "YouTube (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=GZvSYJDk-us", "est_hours": 2},
+        {"title": "RESTful API Tutorial", "platform": "restfulapi.net", "url": "https://restfulapi.net/", "est_hours": 5}
+      ],
+      "paid": [
+        {"title": "REST APIs with Flask and Python", "platform": "Udemy (Jose Salvatierra)", "url": "https://www.udemy.com/course/rest-api-flask-and-python/", "est_hours": 17, "price_range": "$12-15"}
       ]
     }
   }
