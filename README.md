@@ -6,6 +6,9 @@
 
 **Estimated Time Spent:** ~5.5 hours
 
+**Demo Video:** [Demo Video (On Youtube)](https://www.youtube.com/watch?v=QzcOhvHHEGg)
+> Note: I apologize as the video might feel a little out of sync as I had to cut down the length of the video.
+
 ---
 
 ## Quick Start
