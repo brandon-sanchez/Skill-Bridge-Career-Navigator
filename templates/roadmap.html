@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}Learning Roadmap — {{ profile.name }} — Skill-Bridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <h2 class="mb-1">Learning Roadmap</h2>
+                <p style="color: var(--sb-text-secondary);">
+                    Personalized plan for {{ profile.name }} targeting
+                    <strong>{{ profile.target_role }}</strong>
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="{{ url_for('dashboard', profile_id=profile.id) }}" class="btn btn-sb-outline btn-sm">Gap Analysis</a>
+                <a href="{{ url_for('profile_view', profile_id=profile.id) }}" class="btn btn-sb-outline btn-sm">Profile</a>
+            </div>
+        </div>
+
+        {# total estimated time #}
+        {% if roadmap.get('total_estimated_time') %}
+            <div class="data-source-banner mb-4">
+                <strong>Estimated total time:</strong> {{ roadmap.total_estimated_time }}
+                {% if roadmap.get('method') == 'ai' %}
+                    <span class="badge-sb badge-sb-primary ms-1">AI-Generated</span>
+                {% else %}
+                    <span class="badge-sb badge-sb-muted ms-1">Auto-Generated</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {# overall progress bar #}
+        <div class="sb-card mb-4">
+            <div class="card-body py-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h6 class="mb-0">Your Progress</h6>
+                    <span id="progress-text" style="color: var(--sb-text-muted); font-size: 0.85rem;">0 / 0 completed</span>
+                </div>
+                <div class="strength-meter">
+                    <div id="progress-bar" class="progress-bar strength-bar-success" style="width: 0%">0%</div>
+                </div>
+            </div>
+        </div>
+
+        {# learning phases #}
+        {% for phase in roadmap.get('phases', []) %}
+            {% set phase_idx = loop.index0 %}
+            <div class="sb-card mb-4 phase-card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">{{ phase.phase_name }}</h5>
+                        {% if phase.duration %}
+                            <span class="badge-sb badge-sb-muted">{{ phase.duration }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="card-body">
+                    {# skills in this phase #}
+                    <div class="mb-3">
+                        <span class="small" style="color: var(--sb-text-muted); font-weight: 600;">Skills:</span>
+                        {% for skill in phase.get('skills', []) %}
+                            <span class="skill-badge skill-missing">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <div class="row g-4">
+                        {# free resources #}
+                        <div class="col-md-6">
+                            <h6 style="color: #15803D; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;">
+                                Free Resources
+                            </h6>
+                            {% if phase.get('free_resources') %}
+                                {% for resource in phase.free_resources %}
+                                    <div class="resource-item d-flex align-items-start gap-2 py-2 border-bottom">
+                                        <input type="checkbox" class="roadmap-check form-check-input mt-1"
+                                               data-key="rm-{{ profile.id }}-{{ phase_idx }}-free-{{ loop.index0 }}">
+                                        <div class="flex-grow-1">
+                                            <a href="{{ resource.url }}" target="_blank" rel="noopener"
+                                               class="resource-link d-block" style="border-bottom: none; padding: 0;">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <strong>{{ resource.title }}</strong>
+                                                        {% set rtype = resource.get('type', '') %}
+                                                        {% if rtype %}
+                                                            <span class="badge-sb badge-sb-{% if rtype == 'video' %}info{% elif rtype == 'article' %}warning{% elif rtype == 'project' %}success{% else %}muted{% endif %} ms-1">{{ rtype }}</span>
+                                                        {% endif %}
+                                                        <br>
+                                                        <small style="color: var(--sb-text-muted);">{{ resource.platform }}</small>
+                                                    </div>
+                                                    {% if resource.est_hours %}
+                                                        <span class="small" style="color: var(--sb-text-muted); white-space: nowrap;">~{{ resource.est_hours }}h</span>
+                                                    {% endif %}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <p class="small" style="color: var(--sb-text-muted);">No free resources for this phase.</p>
+                            {% endif %}
+                        </div>
+
+                        {# paid resources #}
+                        <div class="col-md-6">
+                            <h6 style="color: #92400E; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;">
+                                Paid Resources
+                            </h6>
+                            {% if phase.get('paid_resources') %}
+                                {% for resource in phase.paid_resources %}
+                                    <div class="resource-item d-flex align-items-start gap-2 py-2 border-bottom">
+                                        <input type="checkbox" class="roadmap-check form-check-input mt-1"
+                                               data-key="rm-{{ profile.id }}-{{ phase_idx }}-paid-{{ loop.index0 }}">
+                                        <div class="flex-grow-1">
+                                            <a href="{{ resource.url }}" target="_blank" rel="noopener"
+                                               class="resource-link d-block" style="border-bottom: none; padding: 0;">
+                                                <div class="d-flex justify-content-between">
+                                                    <div>
+                                                        <strong>{{ resource.title }}</strong>
+                                                        {% set rtype = resource.get('type', '') %}
+                                                        {% if rtype %}
+                                                            <span class="badge-sb badge-sb-{% if rtype == 'video' %}info{% elif rtype == 'article' %}warning{% elif rtype == 'project' %}success{% else %}muted{% endif %} ms-1">{{ rtype }}</span>
+                                                        {% endif %}
+                                                        <br>
+                                                        <small style="color: var(--sb-text-muted);">
+                                                            {{ resource.platform }}
+                                                            {% if resource.price_range %} &middot; {{ resource.price_range }}{% endif %}
+                                                        </small>
+                                                    </div>
+                                                    {% if resource.est_hours %}
+                                                        <span class="small" style="color: var(--sb-text-muted); white-space: nowrap;">~{{ resource.est_hours }}h</span>
+                                                    {% endif %}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <p class="small" style="color: var(--sb-text-muted);">No paid resources for this phase.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        {# certifications #}
+        {% if roadmap.get('certifications_recommended') %}
+            <div class="sb-card mb-4">
+                <div class="card-body">
+                    <h5>Recommended Certifications</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead>
+                                <tr><th>Certification</th><th>Relevance</th><th>Cost</th></tr>
+                            </thead>
+                            <tbody>
+                                {% for cert in roadmap.certifications_recommended %}
+                                    <tr>
+                                        <td>{{ cert.name }}</td>
+                                        <td><span class="priority-{{ cert.get('relevance', 'medium') }}">{{ cert.get('relevance', 'medium') }}</span></td>
+                                        <td>{{ cert.get('cost', 'Varies') }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    var checks = document.querySelectorAll('.roadmap-check');
+    var bar = document.getElementById('progress-bar');
+    var text = document.getElementById('progress-text');
+    var total = checks.length;
+
+    function update() {
+        var done = 0;
+        checks.forEach(function(c) { if (c.checked) done++; });
+        var pct = total > 0 ? Math.round(done / total * 100) : 0;
+        bar.style.width = pct + '%';
+        bar.textContent = pct + '%';
+        text.textContent = done + ' / ' + total + ' completed';
+
+        if (pct >= 70) {
+            bar.className = 'progress-bar strength-bar-success';
+        } else if (pct >= 30) {
+            bar.className = 'progress-bar strength-bar-warning';
+        } else {
+            bar.className = 'progress-bar strength-bar-danger';
+        }
+    }
+
+    checks.forEach(function(c) {
+        var key = c.getAttribute('data-key');
+        if (localStorage.getItem(key) === '1') {
+            c.checked = true;
+        }
+        c.addEventListener('change', function() {
+            localStorage.setItem(key, c.checked ? '1' : '0');
+            update();
+        });
+    });
+
+    update();
+})();
+</script>
+{% endblock %}

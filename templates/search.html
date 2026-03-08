@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Browse Profiles — Skill-Bridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <h2 class="mb-4">Browse Profiles</h2>
+
+        {# search and filter #}
+        <div class="sb-card mb-4">
+            <div class="card-body">
+                <form method="GET" action="{{ url_for('search') }}" class="row g-3">
+                    <div class="col-md-5">
+                        <label for="q" class="form-label">Search by name, skills, or role</label>
+                        <input type="text" class="form-control" name="q" id="q"
+                               value="{{ query }}" placeholder="e.g. Python, Alice, Data Engineer">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="role" class="form-label">Filter by role</label>
+                        <select class="form-select" name="role" id="role">
+                            <option value="">All roles</option>
+                            {% for r in roles %}
+                                <option value="{{ r }}" {{ 'selected' if role_filter == r }}>{{ r }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button type="submit" class="btn btn-sb-primary w-100">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {# results #}
+        {% if profiles %}
+            <p style="color: var(--sb-text-muted); font-size: 0.9rem;">
+                {{ profiles | length }} profile{{ 's' if profiles | length != 1 }} found
+            </p>
+            <div class="row g-3">
+                {% for profile in profiles %}
+                    <div class="col-md-6">
+                        <div class="sb-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-1">{{ profile.name }}</h5>
+                                        <span class="badge-sb badge-sb-info">{{ profile.persona_display }}</span>
+                                    </div>
+                                    {% if profile.has_analysis %}
+                                        <span class="badge-sb badge-sb-success" title="Analysis complete">
+                                            <i class="bi bi-check-circle"></i>
+                                        </span>
+                                    {% endif %}
+                                </div>
+                                <p class="mt-2 mb-1"><strong>Target:</strong> {{ profile.target_role }}</p>
+                                <div class="mt-2">
+                                    {% for skill in profile.get_skills_list()[:6] %}
+                                        <span class="skill-badge skill-neutral" style="font-size:0.75rem;">{{ skill }}</span>
+                                    {% endfor %}
+                                    {% if profile.get_skills_list() | length > 6 %}
+                                        <span class="small" style="color: var(--sb-text-muted);">
+                                            +{{ profile.get_skills_list() | length - 6 }} more
+                                        </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex gap-2">
+                                <a href="{{ url_for('profile_view', profile_id=profile.id) }}" class="btn btn-sb-outline btn-sm">View Profile</a>
+                                <a href="{{ url_for('dashboard', profile_id=profile.id) }}" class="btn btn-sb-primary btn-sm">Gap Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <p style="color: var(--sb-text-muted);">
+                    {% if query or role_filter %}
+                        No profiles match your search. Try different keywords.
+                    {% else %}
+                        No profiles yet. <a href="{{ url_for('index') }}" style="color: var(--sb-primary);">Create one</a> to get started.
+                    {% endif %}
+                </p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

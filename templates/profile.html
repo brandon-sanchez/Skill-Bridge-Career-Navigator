@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}{{ profile.name }} — Skill-Bridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="mb-1">{{ profile.name }}</h2>
+                <span class="badge-sb badge-sb-info">{{ profile.persona_display }}</span>
+                <span class="ms-2" style="color: var(--sb-text-muted); font-size: 0.9rem;">{{ profile.email }}</span>
+            </div>
+            {% if not editing %}
+                <a href="{{ url_for('profile_edit', profile_id=profile.id) }}" class="btn btn-sb-outline btn-sm">Edit</a>
+            {% endif %}
+        </div>
+
+        {# view mode #}
+        {% if not editing %}
+            <div class="sb-card mb-4">
+                <div class="card-body">
+                    <h5>Target Role</h5>
+                    <p class="fs-5 mb-1">{{ profile.target_role }}</p>
+                    {% if profile.experience_years > 0 %}
+                        <p style="color: var(--sb-text-muted);">{{ profile.experience_years }} years of experience</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="sb-card mb-4">
+                <div class="card-body">
+                    <h5>Extracted Skills</h5>
+                    <div class="mt-2">
+                        {% for skill in profile.get_skills_list() %}
+                            <span class="skill-badge skill-neutral">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 flex-wrap">
+                <a href="{{ url_for('dashboard', profile_id=profile.id) }}" class="btn btn-sb-primary">
+                    View Gap Analysis
+                </a>
+                {% if profile.has_analysis %}
+                    <a href="{{ url_for('roadmap', profile_id=profile.id) }}" class="btn btn-sb-cta">
+                        View Learning Roadmap
+                    </a>
+                {% endif %}
+                <form method="POST" action="{{ url_for('profile_delete', profile_id=profile.id) }}"
+                      onsubmit="return confirm('Delete this profile? This cannot be undone.');"
+                      class="d-inline">
+                    <button type="submit" class="btn btn-sb-outline btn-sm"
+                            style="border-color: var(--sb-danger); color: var(--sb-danger);">
+                        Delete
+                    </button>
+                </form>
+            </div>
+
+        {# edit mode #}
+        {% else %}
+            <form method="POST" action="{{ url_for('profile_edit', profile_id=profile.id) }}">
+                <div class="sb-card mb-4">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" value="{{ profile.name }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="persona" class="form-label">Persona</label>
+                            <select class="form-select" name="persona" id="persona">
+                                <option value="recent_grad" {{ 'selected' if profile.persona == 'recent_grad' }}>Recent Graduate</option>
+                                <option value="career_switcher" {{ 'selected' if profile.persona == 'career_switcher' }}>Career Switcher</option>
+                                <option value="upskilling" {{ 'selected' if profile.persona == 'upskilling' }}>Upskilling Professional</option>
+                                <option value="mentor" {{ 'selected' if profile.persona == 'mentor' }}>Mentor / Advisor</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="target_role" class="form-label">Target Role</label>
+                            <input type="text" class="form-control" name="target_role" id="target_role" value="{{ profile.target_role }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="skills" class="form-label">Skills</label>
+                            <textarea class="form-control" name="skills" id="skills" rows="4"
+                                      placeholder="Comma-separated list of skills">{{ profile.extracted_skills }}</textarea>
+                            <div class="form-text" style="color: var(--sb-text-muted);">
+                                Edit as a comma-separated list. Changing skills or target role will regenerate your analysis.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sb-primary">Save Changes</button>
+                    <a href="{{ url_for('profile_view', profile_id=profile.id) }}" class="btn btn-sb-outline">Cancel</a>
+                </div>
+            </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

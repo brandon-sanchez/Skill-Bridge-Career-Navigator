@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+{% block title %}Skill-Bridge — Get Started{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="text-center mb-4">
+            <h1 class="mb-2">Bridge the Gap to<br>Your Dream Career</h1>
+            <p style="color: var(--sb-text-secondary); max-width: 480px; margin: 0 auto;">
+                Upload your resume, pick a target role, and get a personalized
+                gap analysis with a learning roadmap powered by real job market data.
+            </p>
+        </div>
+
+        {# wizard step indicators #}
+        <div class="wizard-steps mb-4">
+            <div class="wizard-step active" id="indicator-1">
+                <div class="wizard-step-circle">1</div>
+                <div class="wizard-step-label">About You</div>
+            </div>
+            <div class="wizard-connector"></div>
+            <div class="wizard-step" id="indicator-2">
+                <div class="wizard-step-circle">2</div>
+                <div class="wizard-step-label">Resume</div>
+            </div>
+            <div class="wizard-connector"></div>
+            <div class="wizard-step" id="indicator-3">
+                <div class="wizard-step-circle">3</div>
+                <div class="wizard-step-label">Target Role</div>
+            </div>
+        </div>
+
+        <form method="POST" action="{{ url_for('onboard') }}" enctype="multipart/form-data"
+              id="wizardForm">
+
+            {# about you section #}
+            <div class="sb-card mb-4 wizard-panel" id="step-1">
+                <div class="card-body">
+                    <h4 class="mb-3">Tell us about yourself</h4>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                               placeholder="e.g. Alice Chen">
+                        <div class="validation-error" id="nameError">Please enter your name.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                               placeholder="alice@example.com">
+                        <div class="validation-error" id="emailError">Please enter a valid email.</div>
+                    </div>
+
+                    <label class="form-label">Which best describes you?</label>
+                    <div class="validation-error mb-2" id="personaError">Please select an option.</div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <div class="persona-card p-3 h-100" data-persona="recent_grad">
+                                <strong>Recent Graduate</strong>
+                                <p class="small mb-0" style="color: var(--sb-text-secondary);">
+                                    Breaking into the field and understanding what makes you competitive.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="persona-card p-3 h-100" data-persona="career_switcher">
+                                <strong>Career Switcher</strong>
+                                <p class="small mb-0" style="color: var(--sb-text-secondary);">
+                                    Transitioning industries and identifying transferable skills.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="persona-card p-3 h-100" data-persona="upskilling">
+                                <strong>Upskilling Professional</strong>
+                                <p class="small mb-0" style="color: var(--sb-text-secondary);">
+                                    Growing within your current field with new capabilities.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="persona-card p-3 h-100" data-persona="mentor">
+                                <strong>Mentor / Advisor</strong>
+                                <p class="small mb-0" style="color: var(--sb-text-secondary);">
+                                    Evaluating a mentee's readiness and guiding their path.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="persona" id="personaInput">
+
+                    <div class="text-end">
+                        <button type="button" class="btn btn-sb-primary" onclick="goToStep(2)">
+                            Next <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {# resume section #}
+            <div class="sb-card mb-4 wizard-panel d-none" id="step-2">
+                <div class="card-body">
+                    <h4 class="mb-3">Your Resume</h4>
+
+                    <ul class="nav nav-tabs mb-3">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab"
+                                    data-bs-target="#pasteTab" type="button">Paste Text</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab"
+                                    data-bs-target="#uploadTab" type="button">Upload File</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="pasteTab">
+                            <textarea class="form-control" name="resume_text" id="resumeText" rows="8"
+                                      placeholder="Paste your resume text here..."></textarea>
+                        </div>
+                        <div class="tab-pane fade" id="uploadTab">
+                            <div class="p-4 border rounded text-center"
+                                 style="border-style: dashed !important; border-color: var(--sb-border-strong);">
+                                <p class="mb-2" style="color: var(--sb-text-secondary);">
+                                    Upload PDF, DOCX, or TXT (max 5MB)
+                                </p>
+                                <input type="file" class="form-control" name="resume_file" id="resumeFile"
+                                       accept=".pdf,.docx,.txt">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="validation-error mt-2" id="resumeError">
+                        Please paste your resume text or upload a file.
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <button type="button" class="btn btn-sb-outline" onclick="goToStep(1)">
+                            <i class="bi bi-arrow-left"></i> Back
+                        </button>
+                        <button type="button" class="btn btn-sb-primary" onclick="goToStep(3)">
+                            Next <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {# target role section #}
+            <div class="sb-card mb-4 wizard-panel d-none" id="step-3">
+                <div class="card-body">
+                    <h4 class="mb-3">Target Role</h4>
+
+                    <div class="mb-3">
+                        <label for="targetRole" class="form-label">What role are you targeting?</label>
+                        <input type="text" class="form-control form-control-lg" id="targetRole" name="target_role"
+                               list="roleList" placeholder="e.g. Cloud Security Engineer">
+                        <datalist id="roleList">
+                            {% for role in roles %}
+                                <option value="{{ role }}">
+                            {% endfor %}
+                        </datalist>
+                        <div class="form-text" style="color: var(--sb-text-muted);">
+                            Type any job title — we'll match it against real job postings.
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-sb-outline" onclick="goToStep(2)">
+                            <i class="bi bi-arrow-left"></i> Back
+                        </button>
+                        <button type="submit" class="btn btn-sb-cta btn-lg">
+                            Analyze My Skills <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <p class="text-center small" style="color: var(--sb-text-muted);">
+            Try it out with the sample resume in <code>data/sample_resume.txt</code>
+            targeting "Cloud Security Engineer."
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function clearErrors() {
+        document.querySelectorAll('.validation-error').forEach(el => el.classList.remove('show'));
+    }
+
+    function showError(id) {
+        document.getElementById(id).classList.add('show');
+    }
+
+    function switchToStep(step) {
+        document.querySelectorAll('.wizard-panel').forEach(p => p.classList.add('d-none'));
+        document.getElementById('step-' + step).classList.remove('d-none');
+        document.querySelectorAll('.wizard-step').forEach((el, i) => {
+            el.classList.toggle('active', i < step);
+        });
+    }
+
+    function goToStep(step) {
+        clearErrors();
+        let valid = true;
+
+        if (step === 2) {
+            if (!document.getElementById('name').value.trim()) { showError('nameError'); valid = false; }
+            const email = document.getElementById('email').value.trim();
+            if (!email) { showError('emailError'); valid = false; }
+            if (!document.getElementById('personaInput').value) { showError('personaError'); valid = false; }
+            if (!valid) return;
+
+            fetch('/api/check-email?email=' + encodeURIComponent(email))
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.available) {
+                        document.getElementById('emailError').textContent = 'A profile with this email already exists.';
+                        showError('emailError');
+                    } else {
+                        switchToStep(2);
+                    }
+                });
+            return;
+        }
+
+        if (step === 3) {
+            const resumeText = document.getElementById('resumeText').value.trim();
+            const resumeFile = document.getElementById('resumeFile').value;
+            if (!resumeText && !resumeFile) { showError('resumeError'); return; }
+        }
+
+        switchToStep(step);
+    }
+
+    document.querySelectorAll('.persona-card').forEach(card => {
+        card.addEventListener('click', function() {
+            document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
+            this.classList.add('selected');
+            document.getElementById('personaInput').value = this.dataset.persona;
+            clearErrors();
+        });
+    });
+</script>
+{% endblock %}

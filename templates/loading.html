@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Skill-Bridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center py-5">
+        <div class="sb-card">
+            <div class="card-body py-5">
+                {# spinner #}
+                <div class="loading-spinner mb-4">
+                    <div class="spinner-ring"></div>
+                </div>
+
+                <h3 class="mb-2">{{ heading }}</h3>
+                <p id="loading-status" style="color: var(--sb-text-secondary);">{{ initial_message }}</p>
+
+                {# progress bar #}
+                <div class="strength-meter mt-4 mx-auto" style="max-width: 320px;">
+                    <div id="loading-bar" class="progress-bar strength-bar-success loading-bar-animated" style="width: 5%"></div>
+                </div>
+                <p id="loading-step" class="small mt-2" style="color: var(--sb-text-muted);">Starting...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    var bar = document.getElementById('loading-bar');
+    var status = document.getElementById('loading-status');
+    var step = document.getElementById('loading-step');
+    var progress = 5;
+    var generateUrl = "{{ generate_url }}";
+    var redirectUrl = "{{ redirect_url }}";
+    var steps = {{ steps | tojson }};
+    var stepIndex = 0;
+    var generating = false;
+    var done = false;
+
+    var fetchDone = false;
+    var fetchResult = null;
+
+    // smoothly advance the progress bar
+    function advanceProgress() {
+        if (done) return;
+
+
+        if (fetchDone) {
+            progress += 8;
+            if (progress >= 100) {
+                progress = 100;
+                done = true;
+                bar.style.width = '100%';
+                step.textContent = 'Done!';
+                status.textContent = 'Redirecting...';
+                setTimeout(function() {
+                    window.location.href = redirectUrl;
+                }, 300);
+                return;
+            }
+            bar.style.width = Math.round(progress) + '%';
+            setTimeout(advanceProgress, 100);
+            return;
+        }
+
+        // advance step text based on progress
+        var nextStep = Math.floor(progress / (80 / steps.length));
+        if (nextStep > stepIndex && nextStep < steps.length) {
+            stepIndex = nextStep;
+            step.textContent = steps[stepIndex];
+        }
+
+        // advance bar, quick to start but slow down later 
+        if (progress < 30) {
+            progress += Math.random() * 5 + 2;
+        } else if (progress < 60) {
+            progress += Math.random() * 3 + 1;
+        } else if (progress < 85) {
+            progress += Math.random() * 1.5 + 0.3;
+        }
+        if (progress > 85) progress = 85;
+        bar.style.width = Math.round(progress) + '%';
+
+        setTimeout(advanceProgress, 500 + Math.random() * 400);
+    }
+
+    // start generation via fetch
+    function startGeneration() {
+        if (generating) return;
+        generating = true;
+        step.textContent = steps[0];
+
+        fetch(generateUrl, { method: 'POST' })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data.status === 'ready') {
+                    fetchDone = true;
+                } else if (data.status === 'error') {
+                    done = true;
+                    bar.classList.remove('strength-bar-success');
+                    bar.classList.add('strength-bar-danger');
+                    bar.style.width = Math.round(progress) + '%';
+                    step.textContent = 'Something went wrong';
+                    status.textContent = data.message || 'Please try again.';
+                }
+            })
+            .catch(function() {
+                done = true;
+                bar.classList.remove('strength-bar-success');
+                bar.classList.add('strength-bar-danger');
+                step.textContent = 'Connection error';
+                status.textContent = 'Please refresh the page to try again.';
+            });
+    }
+
+    advanceProgress();
+    startGeneration();
+})();
+</script>
+{% endblock %}

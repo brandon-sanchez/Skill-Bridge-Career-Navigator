@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}Gap Analysis — {{ profile.name }} — Skill-Bridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+
+        {# header #}
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <h2 class="mb-1">Gap Analysis</h2>
+                <p style="color: var(--sb-text-secondary);" class="mb-0">
+                    {{ profile.name }} — targeting <strong>{{ profile.target_role }}</strong>
+                    <span class="badge-sb badge-sb-info ms-1">{{ profile.persona_display }}</span>
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <form method="POST" action="{{ url_for('dashboard_refresh', profile_id=profile.id) }}">
+                    <button type="submit" class="btn btn-sb-outline btn-sm">Refresh</button>
+                </form>
+                <a href="{{ url_for('profile_view', profile_id=profile.id) }}" class="btn btn-sb-outline btn-sm">Profile</a>
+            </div>
+        </div>
+
+        {# data source #}
+        <div class="data-source-banner mb-4">
+            <strong>Data source:</strong>
+            {% if gap.get('data_source') == 'JSearch' %}
+                Analyzed <strong>{{ gap.get('postings_analyzed', 0) }}</strong> active job postings.
+            {% elif 'O*NET' in gap.get('data_source', '') %}
+                Using synthetic occupational data.
+            {% else %}
+                Skill comparison data.
+            {% endif %}
+            {% if gap.get('method') == 'ai' %}
+                <span class="badge-sb badge-sb-primary ms-1">AI Skill Comparison</span>
+            {% else %}
+                <span class="badge-sb badge-sb-muted ms-1">Keyword Matching (Fallback) Skill Comparison</span>
+            {% endif %}
+        </div>
+
+        {# strength score #}
+        {% set score = gap.get('strength_score', 0) %}
+        <div class="sb-card mb-4">
+            <div class="card-body">
+                <div class="d-flex align-items-end gap-3 mb-2">
+                    <div class="strength-score-number">{{ score }}%</div>
+                    <div>
+                        <h5 class="mb-0">Strength Score</h5>
+                        <span style="color: var(--sb-text-muted); font-size: 0.85rem;">
+                            {{ gap.get('matched_skills', []) | length }} matched /
+                            {{ gap.get('missing_skills', []) | length }} to learn
+                        </span>
+                    </div>
+                </div>
+                {% if score >= 70 %}
+                    {% set bar_class = 'strength-bar-success' %}
+                {% elif score >= 40 %}
+                    {% set bar_class = 'strength-bar-warning' %}
+                {% else %}
+                    {% set bar_class = 'strength-bar-danger' %}
+                {% endif %}
+                <div class="strength-meter mb-2">
+                    <div class="progress-bar {{ bar_class }}" style="width: {{ score }}%">{{ score }}%</div>
+                </div>
+                <p style="color: var(--sb-text-secondary); font-size: 0.9rem;" class="mb-0">{{ gap.get('summary', '') }}</p>
+            </div>
+        </div>
+
+        {# skills comparison #}
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="sb-card h-100">
+                    <div class="card-body">
+                        <h5 style="color: #15803D;" class="mb-3">
+                            Skills You Have
+                            <span class="badge-sb badge-sb-success">{{ gap.get('matched_skills', []) | length }}</span>
+                        </h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase" style="color: var(--sb-text-muted); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.04em;">Skill</small>
+                            <small class="text-uppercase" style="color: var(--sb-text-muted); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.04em;">In postings</small>
+                        </div>
+                        <div class="skill-list-scroll">
+                        {% if gap.get('matched_skills') %}
+                            {% for skill in gap.matched_skills %}
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span class="skill-badge skill-matched">
+                                        {{ skill.skill if skill is mapping else skill }}
+                                    </span>
+                                    {% if skill is mapping and skill.note %}
+                                        <small style="color: var(--sb-text-muted);">{{ skill.note }}</small>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p style="color: var(--sb-text-muted);">No matching skills found yet.</p>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="sb-card h-100">
+                    <div class="card-body">
+                        <h5 style="color: #B91C1C;" class="mb-3">
+                            Skills to Learn
+                            <span class="badge-sb badge-sb-danger">{{ gap.get('missing_skills', []) | length }}</span>
+                        </h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase" style="color: var(--sb-text-muted); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.04em;">Skill</small>
+                            <small class="text-uppercase" style="color: var(--sb-text-muted); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.04em;">In postings / Priority</small>
+                        </div>
+                        <div class="skill-list-scroll">
+                        {% if gap.get('missing_skills') %}
+                            {% for skill in gap.missing_skills %}
+                                {% set priority = skill.priority if skill is mapping else 'medium' %}
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span class="skill-badge skill-missing">
+                                        {{ skill.skill if skill is mapping else skill }}
+                                    </span>
+                                    <div class="d-flex align-items-center gap-2">
+                                        {% if skill is mapping and skill.note %}
+                                            <small style="color: var(--sb-text-muted);">{{ skill.note }}</small>
+                                        {% endif %}
+                                        <span class="priority-{{ priority }}" style="white-space: nowrap;">{{ priority }}</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p style="color: var(--sb-text-muted);">No skill gaps identified.</p>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# transferable skills #}
+        {% if gap.get('transferable_skills') %}
+            <div class="sb-card mt-4">
+                <div class="card-body">
+                    <h5>Transferable Skills</h5>
+                    <p class="small" style="color: var(--sb-text-secondary);">
+                        Skills from your background that apply to {{ profile.target_role }}.
+                    </p>
+                    {% for skill in gap.transferable_skills %}
+                        <span class="badge-sb badge-sb-info me-1">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {# action buttons #}
+        <div class="d-flex gap-2 mt-4">
+            {% if gap.get('missing_skills') %}
+                <a href="{{ url_for('roadmap', profile_id=profile.id) }}" class="btn btn-sb-cta btn-lg">
+                    Get Learning Roadmap <i class="bi bi-arrow-right"></i>
+                </a>
+            {% endif %}
+            <a href="{{ url_for('profile_edit', profile_id=profile.id) }}" class="btn btn-sb-outline">
+                Edit Skills
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
