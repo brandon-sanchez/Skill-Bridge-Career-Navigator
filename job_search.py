@@ -17,6 +17,8 @@ logger = logging.getLogger(__name__)
 def fetch_and_aggregate_skills(target_role, rapidapi_key=''):
     """
     Get market skill requirements for a target role.
+
+    Will revert to fallback skills if API is unavailable.
     """
     if rapidapi_key:
         try:
@@ -25,13 +27,13 @@ def fetch_and_aggregate_skills(target_role, rapidapi_key=''):
                 skills = _aggregate_skills_from_postings(postings)
                 return {
                     'skills': skills,
-                    'source': 'JSearch (Google for Jobs)',
+                    'source': 'Live job postings (LinkedIn, Indeed, Glassdoor & more)',
                     'postings_count': len(postings),
                 }
         except Exception:
-            logger.warning("JSearch API call failed, falling back to O*NET data", exc_info=True)
+            logger.warning("JSearch API call failed, falling back to data", exc_info=True)
 
-    return _fetch_onet_skills(target_role)
+    return _fetch_synthetic_skills(target_role)
 
 
 def _fetch_jsearch_postings(target_role, rapidapi_key, num_pages=5):
@@ -60,9 +62,11 @@ def _fetch_jsearch_postings(target_role, rapidapi_key, num_pages=5):
 
 
 def _aggregate_skills_from_postings(postings):
-    """Count how often each skill appears across a set of job postings
+    """
+    Count how often each skill appears across a set of job postings
     using each posting's job description and qualifications for those
     keywords.
+
     """
     total = len(postings)
     if total == 0:
@@ -106,7 +110,7 @@ def _aggregate_skills_from_postings(postings):
     return skills
 
 
-def _fetch_onet_skills(target_role):
+def _fetch_synthetic_skills(target_role):
     """
     Load skill requirements from the bundled data. It uses fuzzy matching since the user can essentially type whatever
     title they want and the data might not have the specific role title.

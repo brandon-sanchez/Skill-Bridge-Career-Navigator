@@ -51,7 +51,8 @@ def analyze_gaps(user_skills, target_role, persona, openai_key='', rapidapi_key=
 
 
 def generate_roadmap(missing_skills, target_role, persona, openai_key=''):
-    """Build a phased learning plan for the user's skill gaps.
+    """
+    Build a phased learning plan for the user's skill gaps.
 
     Returns a dict with phases, each containing free and paid resource suggestions.
     """

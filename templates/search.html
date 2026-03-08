@@ -11,19 +11,10 @@
         <div class="sb-card mb-4">
             <div class="card-body">
                 <form method="GET" action="{{ url_for('search') }}" class="row g-3">
-                    <div class="col-md-5">
+                    <div class="col-md-9">
                         <label for="q" class="form-label">Search by name, skills, or role</label>
                         <input type="text" class="form-control" name="q" id="q"
                                value="{{ query }}" placeholder="e.g. Python, Alice, Data Engineer">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="role" class="form-label">Filter by role</label>
-                        <select class="form-select" name="role" id="role">
-                            <option value="">All roles</option>
-                            {% for r in roles %}
-                                <option value="{{ r }}" {{ 'selected' if role_filter == r }}>{{ r }}</option>
-                            {% endfor %}
-                        </select>
                     </div>
                     <div class="col-md-3 d-flex align-items-end">
                         <button type="submit" class="btn btn-sb-primary w-100">Search</button>
@@ -76,7 +67,7 @@
         {% else %}
             <div class="text-center py-5">
                 <p style="color: var(--sb-text-muted);">
-                    {% if query or role_filter %}
+                    {% if query %}
                         No profiles match your search. Try different keywords.
                     {% else %}
                         No profiles yet. <a href="{{ url_for('index') }}" style="color: var(--sb-primary);">Create one</a> to get started.

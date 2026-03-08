@@ -1,4 +1,5 @@
-"""Skill-Bridge Career Navigator — Flask application.
+"""
+ lask application.
 
 The main entry point that has all the routes and brings every thing together including the resume parser, the AI engine and the job search modules. I have the routes validate the input and call the particular service for returing the response.
 """
@@ -24,8 +25,6 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    os.makedirs(app.config.get('UPLOAD_FOLDER', 'uploads'), exist_ok=True)
-
     db.init_app(app)
 
     with app.app_context():
@@ -38,7 +37,7 @@ def create_app(config_class=Config):
 
 def validate_onboard_form(form_data, has_resume_text):
     """
-    Validate the onboarding form and return a list of error messages.
+    Validate the form info being passed and return a list of error messages.
     
     The errors list will be empty if there are no errors, otherwise the list will contain the list of errors.
     """
@@ -63,37 +62,25 @@ def validate_onboard_form(form_data, has_resume_text):
 
     return errors
 
-
-def load_role_options():
-    """Load role names from our O*NET data for dropdowns and autocomplete."""
-    data_path = os.path.join(os.path.dirname(__file__), 'data', 'skills_database.json')
-    try:
-        with open(data_path, 'r') as f:
-            data = json.load(f)
-        return sorted(data.get('roles', {}).keys())
-    except (FileNotFoundError, json.JSONDecodeError):
-        return []
-
 def register_routes(app):
 
     @app.route('/')
     def index():
         """Landing page with the onboarding wizard."""
         
-        roles = load_role_options()
-        return render_template('index.html', roles=roles)
+        return render_template('index.html')
 
     @app.route('/onboard', methods=['POST'])
     def onboard():
         """Process the onboarding wizard and create a profile.
 
         Saves the profile immediately, then redirects to a loading page
-        where skill extraction happens asynchronously via an API call.
+        where skill extraction happens asynchronously via the API call.
         """
 
         resume_text = request.form.get('resume_text', '').strip()
 
-        # If a file was uploaded, extract the text from it for storage
+        # ff a file was uploaded, extract the text from it for storage
         resume_file = request.files.get('resume_file')
         if resume_file and resume_file.filename:
             try:
@@ -115,10 +102,9 @@ def register_routes(app):
         if errors:
             for error in errors:
                 flash(error, 'danger')
-            roles = load_role_options()
-            return render_template('index.html', roles=roles), 400
+            return render_template('index.html'), 400
 
-        # Save the profile without skills — extraction happens async
+        # save the profile without skills
         profile = Profile(
             name=request.form['name'].strip(),
             email=email,
@@ -129,7 +115,7 @@ def register_routes(app):
         db.session.add(profile)
         db.session.commit()
 
-        # Show loading page while skills are extracted
+        # show loading page while skills are extracted
         return render_template('loading.html',
             title=f'Building Profile — {profile.name}',
             heading='Parsing your resume',
@@ -145,7 +131,7 @@ def register_routes(app):
 
     @app.route('/profile/<int:profile_id>')
     def profile_view(profile_id):
-        """Display a profile with extracted skills."""
+        """Display profile with extracted skills."""
         
         profile = Profile.query.get_or_404(profile_id)
         return render_template('profile.html', profile=profile)
@@ -267,7 +253,7 @@ def register_routes(app):
 
         profile = Profile.query.get_or_404(profile_id)
 
-        # Already extracted
+        # already extracted
         if profile.get_skills_list():
             return jsonify({'status': 'ready'})
 
@@ -342,10 +328,11 @@ def register_routes(app):
 
     @app.route('/search')
     def search():
-        """Search profiles by name, skills, or target role."""
+        """
+        Search profiles by name, skills, or target role.
+        """
         
         query = request.args.get('q', '').strip()
-        role_filter = request.args.get('role', '').strip()
 
         results = Profile.query
         if query:
@@ -356,19 +343,17 @@ def register_routes(app):
                     Profile.target_role.ilike(f'%{query}%'),
                 )
             )
-        if role_filter:
-            results = results.filter(Profile.target_role.ilike(f'%{role_filter}%'))  # type: ignore[union-attr]
 
         results = results.order_by(Profile.created_at.desc()).all()
-        roles = load_role_options()
-        return render_template(
-            'search.html', profiles=results, roles=roles,
-            query=query, role_filter=role_filter
-        )
+        return render_template('search.html', profiles=results, query=query)
 
     @app.route('/api/check-email')
     def api_check_email():
-        """Check if an email is already in use."""
+        """
+        Check if an email is already in use.
+
+        Returns True if an email is already in use, False otherwise.
+        """
         email = request.args.get('email', '').strip()
         if not email:
             return jsonify({'available': False, 'message': 'Email is required.'})
@@ -376,12 +361,6 @@ def register_routes(app):
         if exists:
             return jsonify({'available': False, 'message': 'A profile with this email already exists.'})
         return jsonify({'available': True})
-
-    @app.route('/api/roles')
-    def api_roles():
-        """JSON list of known roles for frontend autocomplete."""
-        
-        return jsonify(load_role_options())
 
     @app.errorhandler(404)
     def not_found(e):

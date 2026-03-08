@@ -5,13 +5,14 @@ db = SQLAlchemy()
 
 
 class Profile(db.Model):
-    """Represents a user's career profile including their skills, target role, and cached analysis.
+    """
+    Represents a user's career profile including their skills, target role, and cached analysis.
     """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
 
-    # persona drives how the AI frames its advice so for example, a career switcher gets different guidance than a recent grad.
+    # persona should somewhat dictate how the AI views their skills
     persona = db.Column(db.String(50), nullable=False)
 
     # keeping the raw resume text around so users can re-parse if needed
@@ -44,20 +45,27 @@ class Profile(db.Model):
     )
 
     def get_skills_list(self):
-        """Split the comma-separated skills string into a clean list."""
+        """
+        Split the comma-separated skills string into a clean list
+        """
         
         if not self.extracted_skills:
             return []
         return [s.strip() for s in self.extracted_skills.split(',') if s.strip()]
 
     def set_skills_list(self, skills):
-        """Take a list of skills, deduplicate them, sort alphabetically, and store."""
+        """
+        Take a list of skills, deduplicate them, sort alphabetically, and store.
+        """
         
         unique = sorted(set(s.strip() for s in skills if s.strip()), key=str.lower)
         self.extracted_skills = ', '.join(unique)
 
     def invalidate_analysis(self):
-        """Wipe the cached analysis so it gets regenerated on the next dashboard visit."""
+        """
+        Wipe the cached analysis so it gets regenerated on the next dashboard visit.
+        """
+
         self.gap_analysis_json = None
         self.roadmap_json = None
         self.analysis_generated_at = None

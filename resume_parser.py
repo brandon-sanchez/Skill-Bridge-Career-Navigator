@@ -1,6 +1,6 @@
 """Resume parsing and skill extraction.
 
-Handles three input formats (PDF, DOCX, plain text) and extracts skills
+Handles three input formats (pdf, docx, and plain text) and extracts skills
 using either OpenAI or a keyword-based fallback.
 """
 
@@ -20,7 +20,8 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 def _load_known_skills():
-    """Build the known skills list from skills_database.json.
+    """
+    Build the known skills list from skills_database.json.
     """
     path = os.path.join(DATA_DIR, 'skills_database.json')
     try:
@@ -37,7 +38,7 @@ def _load_known_skills():
 
 
 def _load_skill_aliases():
-    """Load abbreviation-to-canonical-name mappings from skill_aliases.json."""
+    """Load abbreviation mappings from skill_aliases.json."""
     path = os.path.join(DATA_DIR, 'skill_aliases.json')
     try:
         with open(path, 'r') as f:
@@ -46,13 +47,14 @@ def _load_skill_aliases():
         return {}
 
 
-# Load once at import time so don't read files on every request
+# load once at import time so don't read files on every request
 KNOWN_SKILLS = _load_known_skills()
 SKILL_ALIASES = _load_skill_aliases()
 
 
 def extract_text_from_file(file):
-    """Pull plain text out of an uploaded file.
+    """
+    Pull the plain text out of an uploaded file
 
     Returns the extracted text as a string, or else it will raise an error if the
     format isn't supported.
@@ -83,11 +85,13 @@ def extract_text_from_file(file):
 
 
 def extract_skills(resume_text, openai_key=''):
-    """Extract skills from resume text using the AI but if not then it just falls back to the keyword matching.
+    """
+    Extract skills from resume text using the AI but if not then it just falls back to the keyword matching.
 
     Returns a dict
     """
-    # Try extracting it with the AI first
+
+    # try extracting it with the AI first
     if openai_key:
         try:
             return _extract_skills_with_ai(resume_text, openai_key)
@@ -118,7 +122,8 @@ def _extract_skills_with_ai(resume_text, openai_key):
 
     content = response.output_text.strip()
 
-    # Handle cases where the AI wraps the JSON in markdown code blocks
+    # handle cases where the AI wraps the JSON in markdown code blocks (was having trouble with this so added
+    # this for debugging)
     if content.startswith('```'):
         content = content.split('\n', 1)[-1].rsplit('```', 1)[0].strip()
 
@@ -134,12 +139,12 @@ def _extract_skills_with_keywords(resume_text):
     text_lower = resume_text.lower()
     found_skills = set()
 
-    # Check aliases first
+    # check aliases first
     for alias, canonical in SKILL_ALIASES.items():
         if alias in text_lower:
             found_skills.add(canonical)
 
-    # Check each known skill as a whole-word match
+    # check each known skill as a whole-word match
     for skill in KNOWN_SKILLS:
         pattern = r'\b' + re.escape(skill) + r'\b'
         if re.search(pattern, resume_text, re.IGNORECASE):
